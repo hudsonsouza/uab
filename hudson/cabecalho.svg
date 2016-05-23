@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="240.10001"
+   height="60.099998"
+   viewBox="0 0 240.10001 60.099999"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r"
+   sodipodi:docname="cabecalho.svg"
+   inkscape:export-filename="/var/www/uab/hudson/uab-cabecalho.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.4652227"
+     inkscape:cx="120.05"
+     inkscape:cy="30.049999"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="691"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="-23.046875,8.5742188"
+       orientation="1,0"
+       id="guide4285" />
+    <sodipodi:guide
+       position="64.6009,59.755832"
+       orientation="1,0"
+       id="guide4350" />
+    <sodipodi:guide
+       position="232.56324,28.262893"
+       orientation="1,0"
+       id="guide4356" />
+    <sodipodi:guide
+       position="84.820796,16.300964"
+       orientation="1,0"
+       id="guide4264" />
+    <sodipodi:guide
+       position="27.298862,14.111006"
+       orientation="1,0"
+       id="guide4302" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="logo"
+     style="display:inline">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4331"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:'Ecliptic BRK';font-style:normal;font-weight:normal;font-size:15px;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;text-align:center;-inkscape-font-specification:'Ecliptic BRK, Normal';font-stretch:normal;font-variant:normal;writing-mode:lr"><flowRegion
+         id="flowRegion4333"><rect
+           id="rect4335"
+           width="45.009739"
+           height="16.412392"
+           x="73.109741"
+           y="72.53363" /></flowRegion><flowPara
+         id="flowPara4337" /></flowRoot>    <g
+       id="g4206">
+      <g
+         id="g4306">
+        <path
+           transform="matrix(-0.52838553,-0.84900455,0.91349014,-0.40686087,0,0)"
+           d="M -16.038227,-1.4300036 A 38.1171,41.876987 0 0 1 -33.401023,33.695099 L -54.155327,-1.4300036 Z"
+           sodipodi:end="0.99501773"
+           sodipodi:start="0"
+           sodipodi:ry="41.876987"
+           sodipodi:rx="38.1171"
+           sodipodi:cy="-1.4300036"
+           sodipodi:cx="-54.155327"
+           sodipodi:type="arc"
+           id="path4302-8"
+           style="display:inline;opacity:1;fill:#000080;fill-opacity:1;stroke:none;stroke-width:1.00240552;stroke-miterlimit:4;stroke-dasharray:6.01443315, 1.00240552;stroke-dashoffset:0;stroke-opacity:1" />
+        <path
+           style="display:inline;opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00240552;stroke-miterlimit:4;stroke-dasharray:6.01443315, 1.00240552;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4283-2-9"
+           sodipodi:type="arc"
+           sodipodi:cx="-52.472557"
+           sodipodi:cy="3.5163999"
+           sodipodi:rx="30.999897"
+           sodipodi:ry="30.773203"
+           sodipodi:start="0"
+           sodipodi:end="0.99501773"
+           d="M -21.47266,3.5163999 A 30.999897,30.773203 0 0 1 -35.593485,29.327997 L -52.472557,3.5163999 Z"
+           transform="matrix(-0.46114845,-0.887323,0.88234158,-0.47060953,0,0)" />
+        <path
+           style="display:inline;opacity:1;fill:#80b3ff;fill-opacity:1;stroke:none;stroke-width:1.00240552;stroke-miterlimit:4;stroke-dasharray:6.01443315, 1.00240552;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4283-7"
+           sodipodi:type="arc"
+           sodipodi:cx="-52.605602"
+           sodipodi:cy="8.4455452"
+           sodipodi:rx="25.195057"
+           sodipodi:ry="22.130644"
+           sodipodi:start="0"
+           sodipodi:end="0.99501773"
+           d="M -27.410545,8.4455452 A 25.195057,22.130644 0 0 1 -38.887196,27.008035 L -52.605602,8.4455452 Z"
+           transform="matrix(-0.38527169,-0.92280319,0.83309948,-0.55312318,0,0)" />
+        <path
+           transform="matrix(-0.28456422,-0.95865698,0.73087564,-0.68251066,0,0)"
+           d="M -35.716131,15.703109 A 19.918638,14.730077 0 0 1 -44.78931,28.058235 L -55.634769,15.703109 Z"
+           sodipodi:end="0.99501773"
+           sodipodi:start="0"
+           sodipodi:ry="14.730077"
+           sodipodi:rx="19.918638"
+           sodipodi:cy="15.703109"
+           sodipodi:cx="-55.634769"
+           sodipodi:type="arc"
+           id="path4315-8"
+           style="display:inline;opacity:1;fill:#afc6e9;fill-opacity:1;stroke:none;stroke-width:1.00240552;stroke-miterlimit:4;stroke-dasharray:6.01443315, 1.00240552;stroke-dashoffset:0;stroke-opacity:1" />
+        <path
+           style="display:inline;opacity:1;fill:#000080;fill-opacity:1;stroke:none;stroke-width:1.00240552;stroke-miterlimit:4;stroke-dasharray:6.01443315, 1.00240552;stroke-dashoffset:0;stroke-opacity:1"
+           id="path4317-1"
+           sodipodi:type="arc"
+           sodipodi:cx="-27.976974"
+           sodipodi:cy="-46.829098"
+           sodipodi:rx="3.9970336"
+           sodipodi:ry="3.9970336"
+           sodipodi:start="2.1885996"
+           sodipodi:end="0.91011215"
+           d="m -30.29224,-43.570904 a 3.9970336,3.9970336 0 0 1 -1.505388,-4.432452 3.9970336,3.9970336 0 0 1 3.734962,-2.821857 3.9970336,3.9970336 0 0 1 3.852495,2.659154 3.9970336,3.9970336 0 0 1 -1.313995,4.492909 l -2.452808,-3.155948 z"
+           transform="matrix(-0.99989788,-0.01429077,0.01429077,-0.99989788,0,0)" />
+      </g>
+      <text
+         y="-65.290474"
+         x="-19.10359"
+         transform="matrix(1.0963849,0,0,1.060173,-25.675927,-78.351404)"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.68132687px;line-height:0%;font-family:'Ecliptic BRK';-inkscape-font-specification:'Ecliptic BRK, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="text4339"
+         sodipodi:linespacing="0%"><textPath
+           rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+           dy="0"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.02056074px;line-height:0%;font-family:'Chemical Reaction A BRK';-inkscape-font-specification:'Chemical Reaction A BRK, Normal';text-align:center;letter-spacing:0.75050467px;writing-mode:lr-tb;text-anchor:middle;fill:#000080;stroke:none;stroke-opacity:1"
+           id="textPath4345"
+           startOffset="50%"
+           xlink:href="#path4343">EaD Paranavaí</textPath></text>
+    </g>
+    <path
+       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.98943257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 28.417862,86.026135 c 0,0 12.585225,-3.920135 20.603455,-3.949043 8.018231,-0.0289 20.483185,4.509219 20.483185,4.509219"
+       id="path4343"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="url"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:146.00000381%;font-family:Verdana;-inkscape-font-specification:Verdana;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="237.06813"
+       y="34.230141"
+       id="text4338"
+       sodipodi:linespacing="146%"><tspan
+         sodipodi:role="line"
+         x="237.06813"
+         y="34.230141"
+         style="font-size:4.375px;line-height:116.99999571%;text-align:end;letter-spacing:0px;text-anchor:end;fill:#000080"
+         id="tspan4348"
+         rotate="0" /><tspan
+         sodipodi:role="line"
+         x="237.06813"
+         y="40.398453"
+         style="font-size:4.375px;line-height:146.00000381%;text-align:end;letter-spacing:0px;text-anchor:end;fill:#000080"
+         id="tspan4346"
+         rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0">www.paranavai.pr.gov.br/uab</tspan><tspan
+         sodipodi:role="line"
+         x="237.06813"
+         y="46.78595"
+         style="font-size:4.375px;line-height:146.00000381%;text-align:end;letter-spacing:0px;text-anchor:end;fill:#000080"
+         id="tspan4342"
+         rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0">uab@paranavai.pr.gov.br</tspan><tspan
+         sodipodi:role="line"
+         x="237.06813"
+         y="53.17345"
+         style="font-size:4.375px;line-height:146.00000381%;text-align:end;letter-spacing:0px;text-anchor:end;fill:#000080"
+         id="tspan4344"
+         rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0">+55 44 3902-1207</tspan></text>
+  </g>
+  <g
+     inkscape:label="Polo EaD Paranavai"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-992.26216)"
+     style="display:inline">
+    <g
+       transform="translate(1.9202736,994.62055)"
+       style="display:inline"
+       id="g4199">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:100%;font-family:'Chemical Reaction A BRK';-inkscape-font-specification:'Chemical Reaction A BRK, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="139.93132"
+         y="18.097832"
+         id="text4207"
+         sodipodi:linespacing="100%"><tspan
+           style="font-size:17.5px;letter-spacing:0.28999999px"
+           sodipodi:role="line"
+           id="tspan4209"
+           x="140.07631"
+           y="18.097832">Polo EaD Paranavaí</tspan></text>
+      <text
+         sodipodi:linespacing="100%"
+         id="text4372"
+         y="26.154289"
+         x="139.95309"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:100%;font-family:'Ecliptic BRK';-inkscape-font-specification:'Ecliptic BRK, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;line-height:100%;font-family:'36 days ago BRK';-inkscape-font-specification:'36 days ago BRK, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000080"
+           y="26.154289"
+           x="139.95309"
+           id="tspan4374"
+           sodipodi:role="line">Polo Presencial de Educação a Distância de Paranavaí</tspan></text>
+    </g>
+  </g>
+</svg>
