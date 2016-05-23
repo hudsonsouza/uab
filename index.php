@@ -18,7 +18,7 @@
 
     <div id="geral">
 	
-        <?php include('funcao.php'); ?>
+        <?php // include('funcao.php'); ?>
         
 	<div id="cabecalho">
 		<?php include('cabecalho.php'); ?>
