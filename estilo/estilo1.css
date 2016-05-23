@@ -283,6 +283,24 @@ ul.menu li a:hover { color: #E2144A; }
 }
 
 
+.centro{
+	text-align: center;
+}
+
+.maiusculo{
+	text-transform: uppercase; /* letra maiusculo */
+}
+
+.minusculo{
+	text-transform: lowercase;  /* letra minusculo */
+}
+
+.subtituloNormal{
+	font-weight: bold;
+	text-align:center;
+	color: #000000;
+}
+
 #corpo-barraBranca{
 	background-color: #FFFFFF;
 	padding-top: 10px;
