@@ -1,10 +1,13 @@
 <?php ?>
-
+<br><br>
+<div class="titulo">
+	DESTAQUE
+</div>
 <br><br><br>
 
 <center>
-    <h1>HISTÓRIA</h1>
+
     <br><br><br>
-    <h3>Página em Manutenção...</h3>
+    <h4>Página em Manutenção...</h4>
     <br><br>
 </center>

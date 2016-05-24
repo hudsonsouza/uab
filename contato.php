@@ -11,13 +11,13 @@
     <INPUT type="hidden" name="recipient" value="uab@paranavai.pr.gov.br">
     <INPUT type="hidden" name="subject" value="Contato Via Internet">
     <INPUT type="hidden" name="env_report" value="REMOTE_HOST">
-    <INPUT type="hidden" name="title" value="UAB - Pólo Paranavaí">
+    <INPUT type="hidden" name="title" value="UAB - Polo ParanavaÃ­">
     <INPUT type="hidden" name="return_link_title" value="VOLTAR">	
     <INPUT type="hidden" name="return_link_url" value="http://www.paranavai.pr.gov.br/uab/index.php"> 
 
 	
 
-		<table width="560" border="0" align="center" cellspacing="10" bgcolor="#FFFFFF">
+		<table width="680" border="0" align="center" cellspacing="10" bgcolor="#FFFFFF">
             <tr>
               <td width="255" bordercolor="#FFFFFF"><div align="right"><strong><font color="#000000" size="2" face="Verdana, Arial, Helvetica, sans-serif">Nome :</font></strong></div></td>
               <td width="418" bordercolor="#FFFFFF"><div align="left">

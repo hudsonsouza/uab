@@ -1,63 +1,63 @@
-<body>
-<br>
+<?php ?>
+<br><br>
 <div class="titulo">
 	NORMAS
 </div>
-<br><br>
+<br><br><br>
 
 <div align="center">
 <span class="subtituloNormal">
-MANUAL DE ORIENTA«√O AOS COORDENADORES DE P”LOS DE APOIO PRESENCIAL 
+MANUAL DE ORIENTA√á√ÉO AOS COORDENADORES DE P√ìLOS DE APOIO PRESENCIAL 
 <br><br>SISTEMA UNIVERSIDADE ABERTA DO BRASIL
-<br><br>ATRIBUI«’ES DO COORDENADOR DE P”LOS DE APOIO PRESENCIAL
+<br><br>ATRIBUI√á√ïES DO COORDENADOR DE P√ìLOS DE APOIO PRESENCIAL
 </span>
 </div>
 
-<br><br><p>A expectativa do adequado exercÌcio da funÁ„o de coordenador de pÛlo prevÍ, dentre outras atribuiÁıes obrigatÛrias, as que se seguem:
+<br><br><p>A expectativa do adequado exerc√≠cio da fun√ß√£o de coordenador de p√≥lo prev√™, dentre outras atribui√ß√µes obrigat√≥rias, as que se seguem:
 
-<br><br>- Representar o municÌpio/estado junto ao MEC e instituiÁıes de ensino superior, em relaÁ„o ‡s aÁıes desenvolvidas no ‚mbito da Universidade Aberta do Brasil;
-<br><br>- Mediar a comunicaÁ„o do municÌpio/estado com o MEC;
-<br><br>- Preencher o Cadastro de Professores da EducaÁ„o b·sica no municÌpio, permitindo a filiaÁ„o dos mesmos ao pÛlo de apoio presencial, a partir dos dados do INEP e sistema de cadastro eletrÙnico a ser disponivilizado pelo MEC;
-<br><br>- Participar das reuniıes, encontros e eventos relativos ao Sistema UAB;
-<br>- Coordenar a articulaÁ„o e comunicaÁ„o com os partÌcipes do Sistema Universidade Aberta do Brasil, destacadamente a CoordenaÁ„o da UAB no MEC;
-<br><br>- Coordenar a implantaÁ„o dos projetos e aÁıes no ‚mbito do PÛlo de apio presencial, bem como o contato com as IES que atuam no pÛlo;
-<br><br>- Participar do FÛrum on-line dos coordenadores de pÛlos de apoio presencial, a ser instituÌdo e coordenado pelo MEC, com espaÁo oficial das discussıes, troca de idÈias e informaÁıes sobre o Sistema UAB;
-<br><br>- Criar mecanismos de articulaÁ„o junto ‡s IES, mantendo a comunicaÁ„o com os coordenadores da UAB dessas instituiÁıes;
-<br><br>- Acompanhar e apoiar a execuÁ„o das atividades pedagÛgicas dos cursos ofertados nos PÛlos de apoio presencial pelas IES, garantindo condiÁıes tÈcnicas, operacionais e administrativas adequadas;
+<br><br>- Representar o munic√≠pio/estado junto ao MEC e institui√ß√µes de ensino superior, em rela√ß√£o √†s a√ß√µes desenvolvidas no √¢mbito da Universidade Aberta do Brasil;
+<br><br>- Mediar a comunica√ß√£o do munic√≠pio/estado com o MEC;
+<br><br>- Preencher o Cadastro de Professores da Educa√ß√£o b√°sica no munic√≠pio, permitindo a filia√ß√£o dos mesmos ao p√≥lo de apoio presencial, a partir dos dados do INEP e sistema de cadastro eletr√¥nico a ser disponivilizado pelo MEC;
+<br><br>- Participar das reuni√µes, encontros e eventos relativos ao Sistema UAB;
+<br><br>- Coordenar a articula√ß√£o e comunica√ß√£o com os part√≠cipes do Sistema Universidade Aberta do Brasil, destacadamente a Coordena√ß√£o da UAB no MEC;
+<br><br>- Coordenar a implanta√ß√£o dos projetos e a√ß√µes no √¢mbito do P√≥lo de apio presencial, bem como o contato com as IES que atuam no p√≥lo;
+<br><br>- Participar do F√≥rum on-line dos coordenadores de p√≥los de apoio presencial, a ser institu√≠do e coordenado pelo MEC, com espa√ßo oficial das discuss√µes, troca de id√©ias e informa√ß√µes sobre o Sistema UAB;
+<br><br>- Criar mecanismos de articula√ß√£o junto √†s IES, mantendo a comunica√ß√£o com os coordenadores da UAB dessas institui√ß√µes;
+<br><br>- Acompanhar e apoiar a execu√ß√£o das atividades pedag√≥gicas dos cursos ofertados nos P√≥los de apoio presencial pelas IES, garantindo condi√ß√µes t√©cnicas, operacionais e administrativas adequadas;
 <br><br>- Relatar ao MEC, periodicamente, fatos ocorridos e relevantes para o adequado funcionamento do Sistema UAB;
-<br><br>- Realizar reuniıes periÛdicas com o corpo tÈcnico do PÛlo e equipe pedagÛgica das IES para a avaliaÁ„o do Sistema UAB a fim de promover e manter a qualidade dos cursos e traÁar estratÈgias para a melhoria dos serviÁos oferecidos ‡ populaÁ„o;
-<br><br>- Zelar pelo bom funcionamento do pÛlo, promovendo a soluÁ„o de eventuais irregularidades e dificuldades junto aos respons·veis;
-<br><br>- Criar endereÁo de e-mail especÌfico para a comunicaÁ„o com o MEC e IES, nos termos definidos pela Secretria de EducaÁ„o a Dist‚ncia.
+<br><br>- Realizar reuni√µes peri√≥dicas com o corpo t√©cnico do P√≥lo e equipe pedag√≥gica das IES para a avalia√ß√£o do Sistema UAB a fim de promover e manter a qualidade dos cursos e tra√ßar estrat√©gias para a melhoria dos servi√ßos oferecidos √† popula√ß√£o;
+<br><br>- Zelar pelo bom funcionamento do p√≥lo, promovendo a solu√ß√£o de eventuais irregularidades e dificuldades junto aos respons√°veis;
+<br><br>- Criar endere√ßo de e-mail espec√≠fico para a comunica√ß√£o com o MEC e IES, nos termos definidos pela Secretria de Educa√ß√£o a Dist√¢ncia.
 <br><br><br><br>
 <center>
   <hr width=70% size=2>
 <br><br><br>
 
-   <span class="subtituloNormal">COMPET NCIAS DO COORDENADOR DE P”LOS DE APOIO PRESENCIAL</span>
+   <span class="subtituloNormal">COMPET√äNCIAS DO COORDENADOR DE P√ìLOS DE APOIO PRESENCIAL</span>
 </center>
     
-<br><br>- S„o competÍncias do coordenador de pÛlo presencial:
-<br><br>- Responder pelo funcionamento administrativo do pÛlo;
-<br><br>- Representar o pÛlo de apoio presencial perante a CoordenaÁ„o da UAB/MEC e das IES que ofereÁam os cursos.
+<br><br>- S√£o compet√™ncias do coordenador de p√≥lo presencial:
+<br><br>- Responder pelo funcionamento administrativo do p√≥lo;
+<br><br>- Representar o p√≥lo de apoio presencial perante a Coordena√ß√£o da UAB/MEC e das IES que ofere√ßam os cursos.
 <br><br><br><br>
 <center>
   <hr width=70% size=2>
 <br><br><br>
 
-   <span class="subtituloNormal">NORMAS E REGULAMENTOS DO P”LO UAB-PARANAVAÕ</span>
+   <span class="subtituloNormal">NORMAS E REGULAMENTOS DO P√ìLO UAB-PARANAVA√ç</span>
 </center>
-<br><br><p>A partir do dia 1∫ de Outubro de 2007, passar· a funcionar o PÛlo Presencial de Apoio ao Ensino Superior a Dist‚ncia de ParanavaÌ.
+<br><br><p>A partir do dia 1¬∫ de Outubro de 2007, passar√° a funcionar o P√≥lo Presencial de Apoio ao Ensino Superior a Dist√¢ncia de Paranava√≠.
 
-<br><br><p>Casa da Cultura ñ Todo encontro previsto neste local, ser· informado com antecedÍncia, via e-mail, atravÈs do fÛrum de alunos;
+<br><br><p>Casa da Cultura ¬ñ Todo encontro previsto neste local, ser√° informado com anteced√™ncia, via e-mail, atrav√©s do f√≥rum de alunos;
 
-<br><br>- Cada grupo de 25 (vinte e cinco) alunos, ficar· sob a responsabilidade de um Tutor para melhor acompanhamento do desempenho e auxÌlio quando necess·rio. Embora cada grupo de 25 (vinte e cinco) alunos tenha um Tutor respons·vel, n„o tirar· a responsabilidade e o direito dos alunos de buscar informaÁıes com qualquer outro Tutor (a);
-<br><br>- Solicitamos a todos a responsabilidade e cuidado ao utilizarem os computadores. O uso dos computadores È EXCLUSIVAMENTE para estudo.
-<br><br>- N„o ser· permitida a entrada nos espaÁos: laboratÛrio de inform·tica, biblioteca, sem o crach· de identificaÁ„o do aluno UAB, bem como a entrada no laboratÛrio de pessoas que n„o sejam alunos UAB;
-<br><br>- AvaliaÁ„o presencial: N„o ser· permitido atraso. No caso de ausÍncia, somente mediante atestado mÈdico protocolado junto ‡ Secretaria, no prazo de 72 (setenta e duas) horas, sendo que este ser· encaminhado a UTFPR para an·lise do requerimento;
-<br><br>- LaboratÛrio de inform·tica e biblioteca - N„o ser„o permitidas manifestaÁıes que prejudiquem os trabalhos;
-<br><br>- Adquira o h·bito de abrir seu e-mail diariamente. TODAS as informaÁıes ser„o transmitidas via correio eletrÙnico (e-mail);
+<br><br>- Cada grupo de 25 (vinte e cinco) alunos, ficar√° sob a responsabilidade de um Tutor para melhor acompanhamento do desempenho e aux√≠lio quando necess√°rio. Embora cada grupo de 25 (vinte e cinco) alunos tenha um Tutor respons√°vel, n√£o tirar√° a responsabilidade e o direito dos alunos de buscar informa√ß√µes com qualquer outro Tutor (a);
+<br><br>- Solicitamos a todos a responsabilidade e cuidado ao utilizarem os computadores. O uso dos computadores √© EXCLUSIVAMENTE para estudo.
+<br><br>- N√£o ser√° permitida a entrada nos espa√ßos: laborat√≥rio de inform√°tica, biblioteca, sem o crach√° de identifica√ß√£o do aluno UAB, bem como a entrada no laborat√≥rio de pessoas que n√£o sejam alunos UAB;
+<br><br>- Avalia√ß√£o presencial: N√£o ser√° permitido atraso. No caso de aus√™ncia, somente mediante atestado m√©dico protocolado junto √† Secretaria, no prazo de 72 (setenta e duas) horas, sendo que este ser√° encaminhado a UTFPR para an√°lise do requerimento;
+<br><br>- Laborat√≥rio de inform√°tica e biblioteca - N√£o ser√£o permitidas manifesta√ß√µes que prejudiquem os trabalhos;
+<br><br>- Adquira o h√°bito de abrir seu e-mail diariamente. TODAS as informa√ß√µes ser√£o transmitidas via correio eletr√¥nico (e-mail);
 
-<br><br>Para entrar em contato com o PÛlo UAB ñ ParanavaÌ:
+<br><br>Para entrar em contato com o Polo UAB Paranava√≠:
 <br>Site: www.paranavai.pr.gov.br/uab
 <br>E-mail: uab@paranavai.pr.gov.br
 <br>Fone: (44) 3902-1207
@@ -69,43 +69,42 @@ MANUAL DE ORIENTA«√O AOS COORDENADORES DE P”LOS DE APOIO PRESENCIAL
 
    <span class="subtituloNormal">REGRAS PARA USO DA PLATAFORMA MOODLE</span>
 </center>
-<br><br>1. Mensagens e tÛpicos relacionados ‡ pirataria (cracks, seriais, downloads de programas (jogos completos, apologia, etc), cÛdigos destrutivos e/ou maliciosos, informaÁıes sigilosas e/ou pessoais, e similares ser„o imediatamente excluÌdos e o participante que postou poder· ser banido por uma semana ou expulso do FÛrum. 
+<br><br>1. Mensagens e t√≥picos relacionados √† pirataria (cracks, seriais, downloads de programas (jogos completos, apologia, etc), c√≥digos destrutivos e/ou maliciosos, informa√ß√µes sigilosas e/ou pessoais, e similares ser√£o imediatamente exclu√≠dos e o participante que postou poder√° ser banido por uma semana ou expulso do F√≥rum. 
 
-<br><br>2. N„o È permitido ofender, provocar, ameaÁar ou ironizar nenhum participante e È proibido o uso de palavras de baixo cal„o nas mensagens e assinaturas, sob pena de expuls„o imediata. O mesmo se aplica ‡s mensagens privadas. CrÌticas e reclamaÁıes sobre o comportamento de outros participantes devem ser evitadas! Se desejar reclamar sobre o comportamento de um outro participante envie um e-mail para um dos Administradores do FÛrum ead@utfpr.edu.br com as suas reclamaÁıes e links que as fundamentem. 
+<br><br>2. N√£o √© permitido ofender, provocar, amea√ßar ou ironizar nenhum participante e √© proibido o uso de palavras de baixo cal√£o nas mensagens e assinaturas, sob pena de expuls√£o imediata. O mesmo se aplica √†s mensagens privadas. Cr√≠ticas e reclama√ß√µes sobre o comportamento de outros participantes devem ser evitadas! Se desejar reclamar sobre o comportamento de um outro participante envie um e-mail para um dos Administradores do F√≥rum ead@utfpr.edu.br com as suas reclama√ß√µes e links que as fundamentem. 
 
-<br><br>2.a. N„o È permitida a intromiss„o em tÛpicos de compra-venda com a intenÁ„o de depreciar ou atrapalhar a compra e/ou venda. O participante poder· ser suspenso do FÛrum. 
+<br><br>2.a. N√£o √© permitida a intromiss√£o em t√≥picos de compra-venda com a inten√ß√£o de depreciar ou atrapalhar a compra e/ou venda. O participante poder√° ser suspenso do F√≥rum. 
 
-<br><br>2.b. N„o È permitida a postagem de mensagens com provocaÁ„o a qualquer produto ou software; o participante que fizer isso ser· expulso do FÛrum. 
+<br><br>2.b. N√£o √© permitida a postagem de mensagens com provoca√ß√£o a qualquer produto ou software; o participante que fizer isso ser√° expulso do F√≥rum. 
 
-<br><br>3. … proibido postar imagens pornogr·ficas ou com conte˙do que fere as demais regras. 
+<br><br>3. √â proibido postar imagens pornogr√°ficas ou com conte√∫do que fere as demais regras. 
 
-<br><br>4. Mensagens duplicadas (ou enviada mais de 2 vezes) ter„o as cÛpias excluÌdas, e o participante poder· ser suspenso caso o ato tenha sido intencional. 
+<br><br>4. Mensagens duplicadas (ou enviada mais de 2 vezes) ter√£o as c√≥pias exclu√≠das, e o participante poder√° ser suspenso caso o ato tenha sido intencional. 
 
-<br><br>5. Ao postar informaÁıes provenientes de qualquer outro site, È obrigatÛria a publicaÁ„o da fonte do mesmo, o nome do autor e o link para o artigo original. O tÛpico ser· excluÌdo caso alguma informaÁ„o esteja incompleta. 
+<br><br>5. Ao postar informa√ß√µes provenientes de qualquer outro site, √© obrigat√≥ria a publica√ß√£o da fonte do mesmo, o nome do autor e o link para o artigo original. O t√≥pico ser√° exclu√≠do caso alguma informa√ß√£o esteja incompleta. 
 
-<br><br>6. As discussıes que se tornarem pessoais (com ataques, ofensas ou ameaÁas) ser„o imediatamente apagadas e os envolvidos expulsos. 
+<br><br>6. As discuss√µes que se tornarem pessoais (com ataques, ofensas ou amea√ßas) ser√£o imediatamente apagadas e os envolvidos expulsos. 
 
-<br><br>7. N„o È permitido postar o e-mail pessoal com o objetivo de receber ou oferecer qualquer auxÌlio que poderia ser feito pelo FÛrum. O FÛrum foi criado para intermediar a comunicaÁ„o entre os participantes, ·rea. 
+<br><br>7. N√£o √© permitido postar o e-mail pessoal com o objetivo de receber ou oferecer qualquer aux√≠lio que poderia ser feito pelo F√≥rum. O F√≥rum foi criado para intermediar a comunica√ß√£o entre os participantes, √°rea. 
 
-<br><br>8. O uso de letras mai˙sculas, em negrito ou com fonte maior do que 2 (dois) È proibida na postagem de mensagens inteiras: o seu uso sÛ È permitido em trechos de mensagens visando chamar a atenÁ„o para a informaÁ„o ali contida. TambÈm È proibida a postagem de mensagens inteiras com cores berrantes (vermelho, rosa ...) ou qualquer outra maneira de chamar a atenÁ„o. 
+<br><br>8. O uso de letras mai√∫sculas, em negrito ou com fonte maior do que 2 (dois) √© proibida na postagem de mensagens inteiras: o seu uso s√≥ √© permitido em trechos de mensagens visando chamar a aten√ß√£o para a informa√ß√£o ali contida. Tamb√©m √© proibida a postagem de mensagens inteiras com cores berrantes (vermelho, rosa ...) ou qualquer outra maneira de chamar a aten√ß√£o. 
 
-<br><br>9. N„o ser„o permitidas crÌticas das regras j· definidas (avatares, mudanÁa de nicks, selos, n∫ de posts, etc), os tÛpicos sobre esses assuntos ser„o apagados. 
+<br><br>9. N√£o ser√£o permitidas cr√≠ticas das regras j√° definidas (avatares, mudan√ßa de nicks, selos, n¬∫ de posts, etc), os t√≥picos sobre esses assuntos ser√£o apagados. 
 
-<br><br>10. O fÛrum n„o È lugar para discussıes pessoais. Iremos expulsar os usu·rios que ficarem trazendo problemas pessoais para o FÛrum. 
+<br><br>10. O f√≥rum n√£o √© lugar para discuss√µes pessoais. Iremos expulsar os usu√°rios que ficarem trazendo problemas pessoais para o F√≥rum. 
 
-<br><br>11. "TÛpicos de despedida" ser„o apagados, pois se alguÈm quiser sair do FÛrum n„o precisa ficar fazendo discurso em p˙blico. 
+<br><br>11. "T√≥picos de despedida" ser√£o apagados, pois se algu√©m quiser sair do F√≥rum n√£o precisa ficar fazendo discurso em p√∫blico. 
 
-<br><br>12. FÛrum È FÛrum; Chat È Chat. TÛpicos ou mensagens que se transformarem em chat poder„o ser apagados, pois o objetivo do fÛrum È ter conte˙do tÈcnico. 
+<br><br>12. F√≥rum √© F√≥rum; Chat √© Chat. T√≥picos ou mensagens que se transformarem em chat poder√£o ser apagados, pois o objetivo do f√≥rum √© ter conte√∫do t√©cnico. 
 
-<br><br>13. Discutir em tÛpicos sobre as decisıes tomadas pelos moderadores e administradores poder· gerar a suspens„o do login. Caso n„o esteja satisfeito com alguma decis„o tomada entre em contato com o administrador e-mail ead@utfpr.edu.br. 
+<br><br>13. Discutir em t√≥picos sobre as decis√µes tomadas pelos moderadores e administradores poder√° gerar a suspens√£o do login. Caso n√£o esteja satisfeito com alguma decis√£o tomada entre em contato com o administrador e-mail ead@utfpr.edu.br. 
 
-<br><br>14. As regras do FÛrum poder„o ser alteradas sem prÈvio aviso. 
+<br><br>14. As regras do F√≥rum poder√£o ser alteradas sem pr√©vio aviso. 
 
-<br><br>15. O participante que for suspenso, e j· tiver histÛrico de suspens„o, ser· banido em definitivo. 
+<br><br>15. O participante que for suspenso, e j√° tiver hist√≥rico de suspens√£o, ser√° banido em definitivo. 
 
-<br><br>16. Sempre que se fizer necess·rio, os Administradores poder„o fechar ·reas ou tomar quaisquer atitudes dr·sticas visando manter o bom andamento do FÛrum. 
+<br><br>16. Sempre que se fizer necess√°rio, os Administradores poder√£o fechar √°reas ou tomar quaisquer atitudes dr√°sticas visando manter o bom andamento do F√≥rum. 
 
-<br><br>17. Qualquer situaÁ„o n„o prevista nas regras, mas que gerar confus„o, conflito, brigas e/ou discussıes desnecess·rias, bem como demais situaÁıes que prejudiquem o fÛrum e seus participantes, ser· rigorosamente observada pelos moderadores e administradores. Caso, utilizando o bom-senso, o moderador/administrador julgar que para o bem de todos a mensagem dever· ser trancada ou excluÌda, ele tem total liberdade para fazÍ-lo. Posteriormente, se necess·rio, as regras ser„o editadas. 
+<br><br>17. Qualquer situa√ß√£o n√£o prevista nas regras, mas que gerar confus√£o, conflito, brigas e/ou discuss√µes desnecess√°rias, bem como demais situa√ß√µes que prejudiquem o f√≥rum e seus participantes, ser√° rigorosamente observada pelos moderadores e administradores. Caso, utilizando o bom-senso, o moderador/administrador julgar que para o bem de todos a mensagem dever√° ser trancada ou exclu√≠da, ele tem total liberdade para faz√™-lo. Posteriormente, se necess√°rio, as regras ser√£o editadas. 
 
 <br><br>
-</body>

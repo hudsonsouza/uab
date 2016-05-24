@@ -23,6 +23,14 @@ body {
 }
 
 
+.titulo{
+	font: "Arial Black";
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	color: #000066;
+	text-transform: uppercase;
+}
 
 #titulo2{  /* <div id="titulo2"> abc </div> */
 	font-weight: bold;
