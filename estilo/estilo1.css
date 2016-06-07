@@ -1,0 +1,773 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-color:#FFFFFF;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11pt; 
+	color: #000000;  
+	text-align: justify; 
+}
+
+#cabecalho {
+    height: 200px;
+    /* background:  #ffffff url(../img_int/siepi-cabecalho-transp.png) left no-repeat scroll; */
+    background:  #ffffff url(../img_int/uab-cabecalho.png) center no-repeat scroll;
+    text-align: center;
+    clear: both;  /*nao flutuar*/
+    /* #332913 novo:4A3815 */
+}
+
+
+#usuario{  /* <div id="usuario"> abc </div> */
+	color: #000000;
+	font-size: 10pt;
+	text-align: right;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+
+#titulo2{  /* <div id="titulo2"> abc </div> */
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #005500;
+	font-size: 16pt;
+	text-align: center;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+#titulo3{  /* <div id="titulo3"> abc </div> */
+	font-weight: bold;
+	color: #6d4109;
+	font-size: 14pt;
+	text-align: center;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+.titulo{  /* <div class="titulo"> abc </div> */
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000055;
+	font-size: 14pt;
+	text-align: center;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.centro{
+	text-align: center;
+}
+
+/* ==== MENU ====  
+#bdfcc9;  
+#f0fff0;  verde claro
+
+#D9EBFF;  azul claro	
+
+*/
+
+#menu{
+	background-color: #D9EBFF;
+	text-align: center;
+	padding: 3px 5px 3px 5px;  /* sup dir inf esq */
+	height: 28px;
+	font-size: 9pt;
+        color: #005500;
+}
+
+
+
+#dia-extenso{
+	width: 49%;
+	float: left;
+        text-align:left;
+        padding-bottom: 1px;
+        padding-left: 3px;
+}
+
+#bem-vindo{
+        padding: 0px;
+	width: 49%;
+	float: right;
+        text-align:right;
+        padding-bottom: 5px;
+}
+
+#menu-celula{
+	background-color: #00ffff;
+	text-align: left;
+	padding: 0px;  /* sup dir inf esq */
+	font-size: 10pt; 
+        clear: both;  /*nao flutuar*/
+}
+
+ul.menubar
+{
+   margin: 0px;
+   padding: 0px;
+   background-color: #FFFFFF; /* IE6 Bug */
+   font-size: 100%;
+   valign: middle;
+   text-align: left;
+   }
+
+ul.menubar .menuvertical
+{
+   margin: 0px;
+     padding: 0px;
+     list-style: none;
+     background-color: #FFFFFF;
+   border: 1px solid #ccc;
+   float:left;
+   text-align: left;
+}
+
+ul.menubar ul.menu
+{
+   display: none;
+   position: absolute;
+   margin: 0px;
+}
+
+ul.menubar a
+{
+   padding: 5px;
+   text-align: center;
+   display:block;
+   text-decoration: none;
+   color: #777;
+   padding: 5px;
+}
+
+
+ul.menu,
+ul.menu ul
+{
+   margin: 0;
+   padding: 0;
+   border-bottom: 1px solid #ccc;
+   width: 200px; /* 'sub-menu' comprimento dos itens */
+   background-color: #FFFFFF; /* IE6 Bug */
+}
+
+ul.menu li
+{
+   position: relative;
+   list-style: none;
+   border: 0px;
+}
+
+ul.menu li a
+{
+   display: block;
+   text-decoration: none;
+   border: 1px solid #ccc;
+   border-bottom: 0px;
+   color: #777;
+   padding: 5px 10px 5px 5px;
+}
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul.menu li { float: left; height: 1%; }
+* html ul.menu li a { height: 1%; }
+/* End */
+
+ul.menu ul
+{
+   position: absolute;
+   display: none;
+   left: 199px; /* 'sub-sub-menu' posicao 1px a menos que o comprimeinto do 'sub-menu' */
+   top: 0px;
+}
+
+ul.menu li.submenu ul { display: none; } /* Hide sub-menus initially */
+
+ul.menu li.submenu { background: transparent url(arrow.gif) right center no-repeat; }
+
+ul.menu li a:hover { color: #E2144A; }
+
+
+
+/* ======= CORPO  ===== */
+
+
+
+#corpo{
+    padding: 0px 10px 10px 10px;  /* sup dir inf esq */
+    background-color:#FFFFFF;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11pt; 
+    color: #000000;  
+    text-align: justify; 
+}
+
+#corpo .titulo3{
+    	font-weight: bold;
+	text-transform: uppercase;
+	color: #6d4109;
+	font-size: 13pt;
+	text-align: center;
+	font-family: Verdana;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#corpo p {
+    text-indent: 50px;
+}
+
+
+#corpo-geral{
+	clear: both;  /*nao flutuar*/
+}
+
+#corpo-descricao{
+	float: left;
+	width: 81%;
+	text-align: center;	
+	vertical-align: middle;
+	/* position: fixed;  FICA FIXO NA PAGINA */
+        /* background:  transparent url(../img_int/esquadrilha-logo2.jpg) center center no-repeat scroll; */
+        /* background-color: #ff0000; */
+}
+
+#corpo-aniversario{
+	background-color: #f0fff0;
+	padding: 5px;
+	width: 18%;
+	float: right;
+        
+}
+
+#corpo-aniversario .capitulo{
+	background-color: #005500;
+	font-weight: bold;
+	color: #FDE57C;
+	text-align: center;
+	width: 100%;
+}
+
+.carregando{
+    color:#666;
+    display:none;
+}
+
+.campo{
+    background-color: #fff;
+}
+
+.campo:focus{
+    background-color: #f6f6d5;
+}
+
+
+.niver{
+	font-weight: bold;
+	color: #ff0000;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 13pt;
+}
+
+.descanse{
+	font-weight: bold;
+	color: #6d4109;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+}
+
+.categoria{
+	background-color: #5c3317;
+	font-weight: bold;
+	color: #FDE57C;
+	text-align: center;
+	width: 100%;
+}
+
+.titulo-noticia{
+	font-weight: bold;
+	color: #5c3317;
+	font-size: 8pt;
+}
+
+.titulo-noticia-verde{
+	font-weight: bold;
+	color: #5c3317;
+	font-size: 8pt;
+        /* background-color: #99ff99; */
+        background-color: #fff68f;
+}
+
+
+#corpo-barraBranca{
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	/* clear: both;  nao flutuar*/
+        width: 18%;
+	float: right;
+}
+
+#corpo-noticia{
+	background-color: #f0fff0;
+	padding: 5px;
+	width: 18%;
+	float: right;
+        
+}
+
+#corpo-noticia .capitulo{
+	background-color: #005500;
+	font-weight: bold;
+	color: #FDE57C;
+	text-align: center;
+	width: 100%;
+        font-size: 10pt;
+}
+
+#corpo-noticia .titulo-noticia{
+	font-weight: bold;
+	color: #005500;
+	font-size: 8pt;
+}
+
+#corpo-noticia .previa{
+	font-size: 9pt;
+	color: #005500;
+	text-align: justify;
+}
+
+.negrito{
+	font-weight: bolder;
+	color: #6d4109;
+	font-size: 11pt;
+}
+
+.maiusculo{
+	text-transform: uppercase; /* letra maiusculo */
+        background-color: #fff;
+}
+
+.maiusculo:focus{
+	text-transform: uppercase; /* letra maiusculo */
+        background-color: #f6f6d5;
+}
+
+.normal{ /* letra maiusculo e minusculo */
+        background-color: #fff;
+}
+
+.normal:focus{
+        background-color: #f6f6d5;
+}
+
+.minusculo{
+	text-transform: lowercase;  /* letra minusculo */
+        background-color: #fff;
+}
+
+.minusculo:focus{
+	text-transform: lowercase;  /* letra minusculo */
+        background-color: #f6f6d5;
+}
+
+.msg {
+	color: #0000ff;
+        font-weight: bold;
+}
+
+.msgERRO {
+	color: #ff0000;
+        font-weight: bold;
+}
+
+.legenda{
+    font-size: 9pt;
+    text-align: center;
+    color: #363636;
+}
+
+.legenda2{
+    font-size: 9pt;
+    text-align: justify;
+    color: #363636;
+}
+
+.legenda-img{
+    font-size: 9pt;
+    text-align: center;
+    color: #363636;
+    font-weight: bold;
+}
+
+.realizada{
+    font-size: 9pt;
+    text-align: center;
+    color: #005500;
+    font-weight: bold;
+}
+
+.aguardando{
+    font-size: 9pt;
+    text-align: center;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.legenda-fonte{
+    font-size: 9pt;
+    text-align: justify;
+    color: #363636;
+}
+
+.legenda-form{
+    font-size: 8pt;
+    text-align: center;
+    color: #0000ff;
+}
+
+.rank{
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    color: #005500;
+    background: #FFFFFF;
+}
+
+table.esq-meio td{
+    font-size: 10pt;
+    color: #000000;
+    vertical-align: middle;
+}
+
+
+/* === TABELA ==== */
+
+.tabela_mostra{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	
+}
+
+.conteudo_branco{
+	text-align:left;
+        white-space: nowrap;
+	font-size: 11px;
+	background: #FFFFFF;
+}
+
+.conteudo_branco_q{
+	text-align:left;
+	font-size: 11px;
+        white-space: normal; /* quebra a linha do texto */
+	background: #FFFFFF;
+}
+
+.conteudo_branco_c{
+	text-align:center;
+        /* white-space: nowrap;  */
+	font-size: 11px;
+	background: #FFFFFF;
+}
+
+.conteudo_branco_p{
+	text-align:justify;
+        /* white-space: nowrap;  */
+	font-size: 11px;
+	background: #FFFFFF;
+        width: 550px;
+}
+
+.conteudo_branco_d{
+	text-align:right;
+        white-space: nowrap;
+	font-size: 11px;
+	background: #FFFFFF;
+}
+
+.conteudo_cinza{
+	text-align:left;
+        white-space: nowrap;
+	font-size: 11px;
+	/* font-weight:bold; */
+	/* background: #DBDBDB; */
+	background: #cfcfcf;
+}
+
+.conteudo_cinza_q{
+	text-align:left;
+	font-size: 11px;
+	white-space: normal; /* quebra a linha do texto */
+	background: #cfcfcf;
+}
+
+.conteudo_cinza_c{
+	text-align:center;
+        /* white-space: nowrap;  */
+	font-size: 11px;
+	background: #cfcfcf;
+}
+
+.conteudo_cinza_p{
+	text-align:justify;
+        /* white-space: nowrap;  */
+	font-size: 11px;
+	background: #cfcfcf;
+        width: 550px;
+}
+
+.conteudo_cinza_d{
+	text-align:right;
+        white-space: nowrap;
+	font-size: 11px;
+	/* font-weight:bold; */
+	/* background: #DBDBDB; */
+	background: #cfcfcf;
+}
+
+.conteudo_branco_d_positivo{
+        color: #0000ff; /* vlr azul */
+	text-align:right;
+        white-space: nowrap;
+	font-size: 11px;
+	/* font-weight:bold; */
+	/* background: #DBDBDB; */
+	background: #ffffff;
+}
+
+.conteudo_branco_d_negativo{
+        color: #ff0000;  /* vlr nermelho */
+	text-align:right;
+        white-space: nowrap;
+	font-size: 11px;
+	/* font-weight:bold; */
+	/* background: #DBDBDB; */
+	background: #ffffff;
+}
+
+.conteudo_cinza_d_positivo{
+        color: #0000ff; /* vlr azul */
+	text-align:right;
+        white-space: nowrap;
+	font-size: 11px;
+	/* font-weight:bold; */
+	/* background: #DBDBDB; */
+	background: #cfcfcf;
+}
+
+.conteudo_cinza_d_negativo{
+        color: #ff0000;  /* vlr nermelho */
+	text-align:right;
+        white-space: nowrap;
+	font-size: 11px;
+	/* font-weight:bold; */
+	/* background: #DBDBDB; */
+	background: #cfcfcf;
+}
+
+.descricao-int{
+    text-align: right;
+}
+
+.conteudo-int{
+    text-align: left;
+    font-weight:bold;
+    background-color: #c3c3c3;
+}
+
+.parceiro-logo{
+    vertical-align: middle;
+    text-align: center;
+}
+.parceiro-descricao{
+    text-align: justify;
+}
+
+.parceiro-nome{
+    font-weight:bold;
+}
+
+
+.tabela{
+	background-color:#FFFFFF;
+	border:1px;
+	border-color:#000000;
+	border-style:solid;
+	border-right-style:none;
+	border-left-style:none;
+	border-width:1px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	text-align:center;
+}
+
+.titulo_esq{
+	background-color:#CCCCCC;
+	text-align:center;
+	font-weight:bold;
+	border-color:#000000;
+	border-width:1px;
+	border-bottom-style:solid;
+	border-right-style:solid;
+}
+
+.titulo_meio{
+	background-color:#CCCCCC;
+	text-align:center;
+	font-weight:bold;
+	border-color:#000000;
+	border-width:1px;
+	border-bottom-style:solid;
+	border-right-style:solid;
+}
+
+.titulo_dir{
+	background-color:#CCCCCC;
+	text-align:center;
+	font-weight:bold;
+	border-color:#000000;
+	border-width:1px;
+	border-bottom-style:solid;
+}
+
+
+.conteudo_e, a:link, a:visited, a:active{
+	text-align:left;
+    white-space: nowrap;
+	text-decoration: none;
+	color: #000000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+
+.conteudo_e, a:hover{
+	text-decoration: none;
+	color: #0000ff;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;	
+}
+
+.conteudo_c{
+	text-align:center;
+        white-space: nowrap;
+}
+
+.conteudo_d{
+	text-align:right;
+        white-space: nowrap;
+}
+
+
+.ata-consulta-descricao{
+    text-align: right;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    background-color: #c3c3c3; 
+}
+
+.ata-consulta-conteudo{
+    text-align: justify;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+
+/* === RODAPE ==== */
+
+
+#rodape{
+	background-color:#D9EBFF;
+	text-align: center; 
+	color: #0000aa;
+	font-family: Verdana;
+	font-size: 9pt;
+	padding-top: 5px;
+	padding-bottom: 32px;
+	clear: both;  /*nao flutuar*/
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#rodape .capitulo{
+	background-color: #005500;
+	font-weight: bold;
+        font-size: 10pt;
+	color: #0000aa;
+	text-align: center;
+	width: 100%;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#rodape-cima{
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	clear: both;  /*nao flutuar*/
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+#rodape .negrito{
+	font-weight: bolder;
+	color: #0000aa;
+	font-size: 9pt;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#rodape-esquerdo{
+	text-align: left;
+	font-size: 8pt;
+	font-family: Verdana;
+	color:#0000aa;
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/*
+IMAGEM DA CONSISTEM
+
+.rodEsq{
+	vertical-align: middle;
+	width: 15%;
+	float: left;
+	background: #ffffff;
+}
+*/
+
+.rodEsq{
+	text-align: left;
+	font-size: 8pt;
+	font-family: Verdana;
+	color:#0000aa;
+	float: left;
+	background-color:#D9EBFF;
+	padding-top: 8px;
+	padding-bottom: 5px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+.rodDir{
+	text-align: right;
+	font-size: 8pt;
+	font-family: Verdana;
+	color: #0000aa;
+	float: right;
+	background-color: #D9EBFF;
+	padding-top: 8px;
+	padding-bottom: 5px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+.copyright{
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #0000aa;
+	text-align: left;
+	/* background: #ffffff; */
+        font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}

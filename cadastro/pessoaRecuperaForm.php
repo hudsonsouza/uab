@@ -1,0 +1,24 @@
+<?php
+        $id_pessoa=trim($_POST["id_pessoa_"]);        
+        $nome=trim(strtoupper($_POST["nome_"]));
+        $sexo=trim(strtolower($_POST["sexo_"]));
+            $sex_m='';
+            $sex_f='';
+            if($sexo=="m")
+               $sex_m='checked="checked"';
+            else
+               $sex_f='checked="checked"';
+        $data_nasc = formataData(converteData(trim(strtolower($_POST["data_nasc_"]))),"usa");
+        $fone=trim(strtolower($_POST["fone_"]));
+        $email=trim(strtolower($_POST["email_"]));
+        $cidade=trim(strtoupper($_POST["cidade_"]));
+        $login=trim(strtolower($_POST["login_"]));
+        $senha=trim($_POST["senha_"]);
+        $permissao=trim($_POST["permissao_"]); 
+        $situacao=trim($_POST["situacao_"]); 
+            $sit_a='';
+            $sit_i='';
+            if($situacao=="a")
+               $sit_a='checked="checked"';
+            else
+               $sit_i='checked="checked"';
