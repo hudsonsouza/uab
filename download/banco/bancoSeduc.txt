@@ -1,0 +1,14 @@
+
+
+
+
+// TABELA MARATONA2007
+
+CREATE TABLE `maratona2007` (
+  `idMaratona` int(11) NOT NULL auto_increment,
+  `nome` varchar(255) collate latin1_bin default NULL,
+  `escola` varchar(255) collate latin1_bin default NULL,
+  `professor` varchar(255) collate latin1_bin default NULL,
+  `serie` varchar(20) collate latin1_bin default NULL,
+  PRIMARY KEY  (`idMaratona`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_bin AUTO_INCREMENT=1 ;

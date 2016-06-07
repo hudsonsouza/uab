@@ -1,0 +1,247 @@
+
+paranavai-pr, 11/05/2007
+
+
+// TABELA PESSOA
+create table pessoa(
+  idPessoa integer not null primary key auto_increment,
+  apelido varchar(30),
+  nome varchar(100),
+  endereco varchar(255),
+  bairro varchar(50),
+  cidade varchar(100),
+  uf char(2),
+  dataNascimento Date,
+  rg varchar(30),
+  cpf varchar(14),
+  situacao enum('a','i') not null default 'a',
+  tipo int(1) not null,
+  foneRes varchar(14),
+  foneComl varchar(14),
+  foneCel varchar(14),
+  email varchar(14)
+);
+
+
+
+--> SITUACAO
+a-ativo
+i-inativo
+
+
+--> TIPOS
+1-funcionario
+2-fornecedor
+3-cliente
+
+
+=== AGENDA TELEFONICA ====
+
+
+CREATE TABLE `pessoa` (
+  `idPessoa` int(11) NOT NULL auto_increment,
+  `nome` varchar(150) collate latin1_bin default NULL,
+  `apelido` varchar(30) collate latin1_bin default NULL,
+  `endereco` varchar(255) collate latin1_bin default NULL,
+  `bairro` varchar(50) collate latin1_bin default NULL,
+  `complemento` varchar(50) collate latin1_bin default NULL,
+  `cep` varchar(10) collate latin1_bin default NULL,
+  `uf` varchar(2) collate latin1_bin default NULL,
+  `cidade` varchar(100) collate latin1_bin default NULL,
+  `empresa` varchar(100) collate latin1_bin default NULL,
+  `cargo` varchar(50) collate latin1_bin default NULL,
+  `foneRes` varchar(14) collate latin1_bin default NULL,
+  `foneCel` varchar(14) collate latin1_bin default NULL,
+  `foneComl` varchar(14) collate latin1_bin default NULL,
+  `foneFax` varchar(14) collate latin1_bin default NULL,
+  `email` varchar(100) collate latin1_bin default NULL,
+  `site` varchar(100) collate latin1_bin default NULL,
+  `msn` varchar(100) collate latin1_bin default NULL,
+  `skype` varchar(100) collate latin1_bin default NULL,
+  `situacao` enum('a','i') collate latin1_bin NOT NULL default 'a',
+  `obs` text collate latin1_bin,
+  PRIMARY KEY  (`idPessoa`)
+);
+
+================================
+
+
+CREATE TABLE `usuario` (
+  `idUsuario` int(11) NOT NULL auto_increment,
+  `login` varchar(15) collate latin1_bin default NULL,
+  `senha` varchar(32) collate latin1_bin default NULL,
+  `senha_original` varchar(32) collate latin1_bin default NULL,
+  `plv_chave` varchar(30) collate latin1_bin NOT NULL,
+  `nivel` int(2) NOT NULL,
+  `situacao` enum('a','i') collate latin1_bin NOT NULL default 'a',
+  `obs` varchar(255) collate latin1_bin NOT NULL,
+  PRIMARY KEY  (`idUsuario`)
+);
+
+
+
+
+================================
+
+// TABELA EVENTO
+create table evento(
+  idEvento integer not null primary key auto_increment,
+  nome varchar(150),
+  data Date,
+  responsavel varchar(150),
+  foneResp varchar(14),
+  horaEntrada Date,
+  idPessoa integer not null,
+  foreign key (idPessoa) references pessoa (idPessoa)
+);
+
+
+================================
+
+// TABELA PESSOA_EVENTO
+create table pessoa_evento(
+  idShow integer not null primary key auto_increment,
+  horaEntrada varchar(19),
+  idPessoa integer not null,
+  foreign key (idPessoa) references pessoa (idPessoa),
+  idEvento integer not null,
+  foreign key (idEvento) references evento (idEvento)
+);
+
+
+
+
+nome
+rg 
+telefone
+horaEntrada
+
+
+
+
+
+==================
+
+// select show
+select pessoa.nome, evento.nome
+  from PESSOA inner join PESSOA_EVENTO
+    on pessoa.idPessoa = pessoa_evento.idShow
+      join EVENTO
+        on pessoa_evento.idShow = evento.idEvento
+
+
+
+
+
+
+select pessoa.nome as "NOME", pessoa.rg as "RG", pessoa.foneCel as "FONE", evento.nome as "EVENTO", pessoa_evento.horaEntrada as "HORA DE ENTRADA"
+from pessoa inner join pessoa_evento
+  on pessoa.idPessoa = pessoa_evento.idShow
+inner join evento
+  on evento.idEvento = pessoa_evento.idShow
+where evento.data='31/05/2007';
+
+
+
+
+select pessoa.nome, pessoa.rg, pessoa.foneCel, evento.nome, pessoa_evento.horaEntrada
+from pessoa, pessoa_evento, evento
+where pessoa.idPessoa = pessoa_evento.idShow
+and pessoa_evento.idShow = evento.idEvento;
+
+
+
+SELECT `pessoa`.`nome` , `evento`.`nome` , `evento`.`horaEntrada`
+FROM `evento` , `pessoa`
+ORDER BY `pessoa`.`nome` ASC , `evento`.`nome` ASC , `evento`.`horaEntrada` ASC
+LIMIT 0 , 30
+
+
+=========
+
+
+select pessoa.idPessoa as "CÓDIGO", pessoa.nome as "NOME", pessoa.rg as "RG", pessoa.foneCel as "FONE", evento.nome as "EVENTO", pessoa_evento.horaEntrada as "HORA DE ENTRADA"
+from pessoa, evento, pessoa_evento
+where evento.data='31/05/2007'
+group by evento.nome;
+
+
+select pessoa.idPessoa as "CÓD", pessoa.nome as "NOME", pessoa.rg as "RG", pessoa.foneCel as "FONE", evento.nome as "EVENTO", pessoa_evento.horaEntrada as "HORA DE ENTRADA"
+from pessoa inner join pessoa_evento
+inner join evento
+where evento.data='31/05/2007'
+group by evento.nome;
+
+
+select pessoa.idPessoa as "CÓD", pessoa.nome as "NOME", pessoa.rg as "RG", pessoa.foneCel as "FONE", evento.nome as "EVENTO", pessoa_evento.horaEntrada as "HORA DE ENTRADA" from pessoa inner join pessoa_evento inner join evento where evento.data='31/05/2007' group by evento.nome;
+
+
+=====================================
+
+
+UAB - DEMANDA DE CURSOS
+=======================
+
+create table uab_demanda(
+  idDemanda integer not null primary key auto_increment,
+  nome varchar(150),
+  cpf varchar(14),           
+  email varchar(100),
+  fone varchar(14),
+  cidade varchar(100),
+  profissao varchar(100),
+  graduacao varchar(100),
+  especializacao varchar(100),
+  formacao_continuada varchar(100),
+  mestrado varchar(100)
+);
+
+
+===================================
+
+=== UAB ====
+
+create table uab_demanda(
+  idDemanda integer not null primary key auto_increment,
+  nome varchar(150),
+  cpf varchar(14),  
+  email varchar(100),
+  fone varchar(14),
+  cidade varchar(100),
+  profissao varchar(100),
+  curso varchar(50),
+  dataHora varchar(20)
+);
+
+
+create table uab_divulgacao (
+idDivulgacao int not null auto_increment primary key,
+nome varchar(150),
+fone varchar(14),
+email varchar(100),
+cidade varchar(50),
+dataHora varchar(19),
+situacao enum('a','i') not null default 'a'
+)
+
+
+create table uab_usuario (
+id_usuario bigint not null auto_increment primary key,
+nome varchar(150),
+apelido varchar(50),
+login varchar(35),
+senha varchar(32),
+plv_chave varchar(50),
+fone_res varchar(14),
+fone_coml varchar(14),
+fone_cel varchar(14),
+email varchar(100),
+observacao varchar(255),
+situacao enum('a','i') not null default 'a',
+nivel int(2) not null default 1
+);
+
+
+
+
+

@@ -12,13 +12,21 @@
         <script type="text/javascript" src="js/ajax.js"></script>
         <script type="text/javascript" src="js/menuJS.js"></script>
         <script type="text/javascript" src="js/menuHorizontal.js"></script>
+        <script type="text/javascript" src="js/validator.js"></script>
+
+        <? 
+        if($barra == "barraFormatacao") { 
+            include("js/tinymce_barra_formatacao.js"); 
+        } 
+        ?> 
+        
     </head>
 
-    <body onload="horizontal();">
+    <body onload="horizontal();campoFoco();">
 
     <div id="geral">
 	
-        <?php // include('funcao.php'); ?>
+        <?php include('funcao.php'); ?>
         
 	<div id="cabecalho">
 		<?php include('cabecalho.php'); ?>

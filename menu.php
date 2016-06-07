@@ -7,14 +7,14 @@
             <ul id="barra" class="menubar" style="text-align:center">
 
                 <li class="menuvertical"><a href='index.php?menu=home' alt="Página Principal" title="Página Principal">Home</a></li> 
+
                     <?php
-                            if($_SESSION['s_permissao'] >= 3){
+                            if( ($_SESSION['s_permissao'] >= 1) &&  ($_SESSION['s_permissao'] <= 9) ){
                                     include('menu_privado.php');
                             };
                     ?>
-
+               
                <li class="menuvertical"><a href='index.php?menu=destaque' alt="Destaque" title="Destaque">Destaque</a></li> 
-               <li class="menuvertical"><a href='index.php?menu=noticia' alt="Notícias" title="Notícias">Notícias</a></li> 
                <li class="menuvertical"><a href='index.php?menu=localizacao' alt="Localização" title="Localização">Localização</a></li> 
                <li class="menuvertical"><a href='index.php?menu=historico' alt="Histórico" title="Histórico">Histórico</a></li> 
                <li class="menuvertical"><a href='index.php?menu=norma' alt="Normas" title="Normas">Normas</a></li> 
@@ -41,6 +41,5 @@
                </li>               
 
                <li class="menuvertical"><a href='index.php?menu=contato' alt="Contato" title="Contato">Contato</a></li> 
-
             </ul>
         </div>

@@ -3,17 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/uab/norma.php</file>
-            <file>file:/var/www/uab/localizacao.php</file>
-            <file>file:/var/www/uab/estilo/estilo1.css</file>
-            <file>file:/var/www/uab/estilo/azul.css</file>
+            <file>file:/var/www/uab/banco/sos-uabparanavai.txt</file>
+            <file>file:/var/www/uab/noticia/noticiaRecuperaDB.php</file>
+            <file>file:/var/www/uab/menu_privado.php</file>
             <file>file:/var/www/uab/index.php</file>
-            <file>file:/var/www/uab/legislacao.php</file>
-            <file>file:/var/www/uab/estrutura.php</file>
-            <file>file:/var/www/uab/noticia.php</file>
-            <file>file:/var/www/uab/destaque.php</file>
-            <file>file:/var/www/uab/historico.php</file>
-            <file>file:/var/www/uab/parceiro.php</file>
+            <file>file:/var/www/uab/usuario/valida_login.php</file>
+            <file>file:/var/www/uab/noticia/noticiaRecuperaForm.php</file>
+            <file>file:/var/www/uab/noticia/noticia_form.php</file>
+            <file>file:/var/www/uab/noticia/noticia_lista.php</file>
         </group>
     </open-files>
 </project-private>

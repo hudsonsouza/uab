@@ -1,0 +1,20 @@
+<?php
+        $id_noticia=trim($_POST["id_noticia_"]);
+        $data = formataData(converteData(trim(strtolower($_POST["data_"]))),"usa");
+        $autor=trim(strtoupper($_POST["autor_"]));
+        $titulo=trim(strtoupper($_POST["titulo_"]));
+        $texto=trim($_POST["texto_"]);
+        $destaque=trim(strtolower($_POST["destaque_"]));
+            $dest_s='';
+            $dest_n='';
+            if($destaque=="s")
+               $dest_s='checked="checked"';
+            else
+               $dest_n='checked="checked"';       
+        $situacao=trim(strtolower($_POST["situacao_"]));
+            $sit_a='';
+            $sit_i='';
+            if($situacao=="a")
+               $sit_a='checked="checked"';
+            else
+               $sit_i='checked="checked"'; 
