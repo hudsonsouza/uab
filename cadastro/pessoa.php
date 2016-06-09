@@ -8,13 +8,14 @@
 
 
 <br><br>
-<div id="titulo2">CADASTRO DE PESSOAS</div>
+<div class="titulo">CADASTRO DE PESSOAS</div>
 <br>
 <center>
 
 <?php 
 
 $acao=$_GET["acao"];
+$preenchimento=FALSE;
 
 
 if($id != null){
@@ -27,9 +28,9 @@ if($id==null && $acao==null){
 
         
 } else if ($id==null && $acao=="insere"){
-	include("cadastro/pessoaRecuperaFormulario.php");
+	include("cadastro/pessoaRecuperaForm.php");
         
-        if(!empty($nome) && !empty($sexo) && !empty($data_nasc) && !empty($fone) && !empty($email) && !empty($cidade) && !empty($login) && !empty($senha)){  // CAMPO EMAIL NAO VAZIO        
+        if( !empty($email) ){  // CAMPO EMAIL NAO VAZIO        
 
                     // VERIFICA EMAIL JA CADASTRADO
                     $verificaEmail=FALSE;
@@ -39,24 +40,33 @@ if($id==null && $acao==null){
                     if($ndados==0)
                        $verificaEmail=TRUE;
 
-            if($verificaEmail==TRUE){
-                    $senhaMD5 = $senha;
-                    mysql_query("INSERT INTO tb_pessoa (id_pessoa , nome , sexo , data_nasc , fone , cidade , login , senha , permissao , situacao ) VALUES (null, '$nome', '$sexo', '$data_nasc', '$fone', '$email', '$cidade', '$login', '$senhaMD5', 1, 'a' )");
-                    mysql_query("commit");
-                    mysql_close();
-                    echo "<div class=msg><br>.:: Cadastro inserido sucesso ! ::.<br><br></div>";
-                    echo "<meta HTTP-EQUIV='refresh' CONTENT='0; URL=index.php?menu=cadastro/pessoaAutenticacao&id=$ultimo_id'>";	
-
-
-            } else {
-                // EMAIL JA EXISTENTE
-                echo "<div class=msgERRO><br>.:: E-MAIL já cadastrado, tente novamente! ::.<br><br></div>";
             
+            if($verificaEmail==TRUE){
+            
+                    if(!empty($nome) && !empty($sexo) && !empty($data_nasc) && !empty($fone) && !empty($email) && !empty($cidade) && !empty($login) && !empty($senha)){  // CAMPO EMAIL NAO VAZIO        
+echo "<br>AKI...";
+                            $senhaMD5 = MD5($senha);
+                            mysql_query("INSERT INTO tb_pessoa (id_pessoa , nome , sexo , data_nasc , fone , email , cidade , login , senha , permissao , situacao ) VALUES (null, '$nome', '$sexo', '$data_nasc', '$fone', '$email', '$cidade', '$login', '$senhaMD5', 1, 'a' )");
+                            mysql_query("commit");
+                            mysql_close();
+                            echo "<div class=msg><br>.:: Cadastro inserido sucesso ! ::.<br><br></div>";
+                            echo "<meta HTTP-EQUIV='refresh' CONTENT='10; URL=index.php?menu=cadastro/pessoa'>";	
+                            $preenchimento=TRUE;
 
+                    } else {
+                        // EMAIL JA EXISTENTE
+                        echo "<div class=msgERRO><br>.:: O preenchimento de todos os campos são obrigatórios! ::.<br><br></div>";
+                    }
+            } else {
+                // CAMPO EMAIL ESTÁ VAZIO
+                echo "<div class=msgERRO><br>.:: EMAIL já cadastrado, informe outro email! ::.<br><br></div>";
+            }
 
+        
         } else {
             // CAMPO EMAIL ESTÁ VAZIO
-            echo "<div class=msgERRO><br>.:: O preenchimento de todos os campos são obrigatórios! ::.<br><br></div>";
+            //echo "<div class=msgERRO><br>.:: O preenchimento de todos os campos são obrigatórios! ::.<br><br></div>";
+            echo "<div class=msgERRO><br>.:: O campo EMAIL é obrigatório! ::.<br><br></div>";
         }
 
                  
@@ -83,29 +93,21 @@ if($id==null && $acao==null){
 	//echo "OPÇÃO INVALIDA";
 }
 
-    
+       
 
 ?>
 
     
-<? // ============= FORMULARIO ====================?>    
-   
-<? 
-    echo "<div class=msg>.:: Etapa: 1/5 - Dados Pessoais ::.<br><br></div>";
+<?php // ============= FORMULARIO ====================
+if($acao!=null && $preenchimento==FALSE){
+    include("cadastro/pessoaRecuperaForm.php");
+}
 ?>    
     
 <FORM id="form1" METHOD="POST" ACTION="./">
   <table width="900" border="0" cellspacing="5" class="corpoTab">
- 
-   <? if($id_pessoa != null){ ?>
-      <tr>
-          <td><div align="right"><b>Foto: </b></div></td>
-          <td><img src="<?=$foto?>" width="100" border="1"></td>      
-            
-      </tr> 
-   <? } ?>    
       
-  <? if($_SESSION["s_idPessoa"]==$id || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
+  <?php if($_SESSION["s_idPessoa"]==$id || $_SESSION["s_permissao"]==9 ){ ?>
       <tr>
         <td><div align="right"><b>Código: </b></div></td>
         <td><input type="text" name="id_pessoa_" class="minusculo" value="<?=($id_pessoa==null)?"":$id_pessoa?>" size="5" readonly /></td>
@@ -118,169 +120,79 @@ if($id==null && $acao==null){
         <input type="text" name="nome_" id="nome_" class="maiusculo" value="<?=($nome==null)?"":$nome?>" size="40" /></td>
   </tr>
   <tr>
-    <td><div align="right"><b>Apelido: </b></div></td>
-    <td><input type="text" name="apelido_" class="campo" value="<?=($apelido==null)?"":$apelido?>" size="10" /></td>
-  </tr>        
-  <tr>
-    <td><div align="right"><b>Cidade-UF: </b></div></td>
-    <td><input type="text" name="cidade_" class="maiusculo" value="<?=($cidade==null)?"":$cidade?>" size="40" /></td>
-  </tr>
-  <tr>
-    <td><div align="right"><b>IES / Propriedade / Empresa: </b></div></td>
-    <td><input type="text" name="propriedade_" class="maiusculo" value="<?=($propriedade==null)?"":$propriedade?>" size="40" /></td>
-  </tr>
-  
-  <!-- JQuery Combobox [Categoria/Subcategoria] -->    
-  <script type="text/javascript"> 
-     $(document).ready(function(){
-        $('#id_categoria_').change(function(){
-            $('#id_subcategoria_').load('treinamento/subcategoria.php?id_categoria='+$('#id_categoria_').val() );
-        });
-     });
-  </script> 
-  
-   <tr>
-    <td><div align="right"><b>Categoria:</b></div></td>
+    <td><div align="right"><b>Sexo: </b></div></td>
     <td>
-            <select name="id_categoria_" id="id_categoria_">
-                <option value="0">--- Selecione ---</option>
-                <?
-                include("banco/conecta.php");
-                $categorias=mysql_query("select * from tb_categoria order by categoria asc;");
-                while($dados1 = mysql_fetch_array($categorias)) {
-                        $id_categoria = $dados1['id_categoria'];
-                        $categoria = $dados1['categoria'];
-                        ?>
-                           <option value="<?=$id_categoria?>" <?=($id_categoria==$pes_id_categoria)?"selected='selected'":""?> > <?=$categoria?> </option>
-                        <?
-                }
-                ?>
-            </select>
-    </td>  
+    	<input type="radio" accesskey="m" name="sexo_" tabindex="1" value="m" <?=$sex_m?> checked="checked" /> Masculino  
+    	&nbsp;&nbsp;&nbsp;
+    	<input type="radio" accesskey="f" name="sexo_" tabindex="2" value="f" <?=$sex_f?> /> Feminino    
+    </td>
+  </tr> 
+  <td><div align="right"><b>Data de Nascimento: </b></div></td>
+    <td><input type="text" name="data_nasc_" class="minusculo" maxlength="40" value="<?=($data_nasc==null)?"":$data_nasc?>" size="15"/></td>
   </tr>
-  
-<? if($pes_id_categoria == null) { // QUANDO É SELECIONADO ALGO EM 'CATEGORIA' ?>
   <tr>
-    <td><div align="right"><b>Subcategoria:</b></div></td>
-    <td>
-            <select name="id_subcategoria_" id="id_subcategoria_">
-                <option value="0" disabled="disabled">Aguardando Categoria...</option> 
-            </select>
-    </td>  
-  </tr>
-  
-<? } else { // VEM DIRETO DO BANCO, SEM A SELECAO DA 'CATEGORIA' ?>
-  <tr>
-    <td><div align="right"><b>Subcategoria:</b></div></td>
-    <td>
-            <select name="id_subcategoria_" id="id_subcategoria_">
-                <?
-                include("banco/conecta.php");
-                $subcategorias=mysql_query("select * from tb_subcategoria where sub_id_categoria='$pes_id_categoria' order by subcategoria asc;");
-                while($dados2 = mysql_fetch_array($subcategorias)) {
-                        $id_subcategoria = $dados2['id_subcategoria'];
-                        $subcategoria = $dados2['subcategoria'];
-                        ?>
-                           <option value="<?=$id_subcategoria?>" <?=($id_subcategoria==$pes_id_subcategoria)?"selected='selected'":""?> > <?=$subcategoria?> </option>
-                        <?
-                }
-                ?>    
-            </select>
-    </td> 
-  </tr>
-<? } ?>
-  
-  <tr>
-    <td><div align="right"><b>Fone Celular: </b></div></td>
-    <td><input type="text" name="fone_cel_" class="minusculo" maxlength="40" value="<?=($fone_cel==null)?"":$fone_cel?>" size="15"/></td>
+    <td><div align="right"><b>Fone: </b></div></td>
+    <td><input type="text" name="fone_" class="minusculo" maxlength="40" value="<?=($fone==null)?"":$fone?>" size="15"/></td>
   </tr> 
   <tr>
     <td><div align="right"><b>E-mail: </b></div></td>
     <td><input type="text" name="email_" class="minusculo" maxlength="40" value="<?=($email==null)?"":$email?>" size="40"/>&nbsp; <span class="legenda-form">*</span></td>
   </tr>  
   <tr>
-    <td><div align="right"><b>Data de Nascimento: </b></div></td>
-    <td><input type="text" name="data_nasc_" class="minusculo" maxlength="40" value="<?=($data_nasc==null)?"":$data_nasc?>" size="15"/></td>
+  <tr>
+    <td><div align="right"><b>Cidade-UF: </b></div></td>
+    <td><input type="text" name="cidade_" class="maiusculo" value="<?=($cidade==null)?"":$cidade?>" size="40" /></td>
   </tr>
   <tr>
-    <td><div align="right"><b>Facebook: </b></div></td>
-    <td><input type="text" name="facebook_" class="campo" maxlength="40" value="<?=($facebook==null)?"":$facebook?>" size="40"/></td>
-  </tr>    
-  <tr>
-    <td><div align="right"><b>Sexo: </b></div></td>
-    <td>
-    	<input type="radio" accesskey="m" name="sexo_" tabindex="1" value="m" <?=$sex_m?> /> Masculino  
-    	&nbsp;&nbsp;&nbsp;
-    	<input type="radio" accesskey="f" name="sexo_" tabindex="2" value="f" <?=$sex_f?> /> Feminino    
-    </td>
-  </tr> 
-  <? if($_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
-  <tr>
-    <td><div align="right"><b>Prova: </b></div></td>
-    <td>
-    	<input type="radio" accesskey="s" name="prova_" tabindex="1" value="s" <?=$prova_s?> /> Sim  
-    	&nbsp;&nbsp;&nbsp;
-    	<input type="radio" accesskey="n" name="prova_" tabindex="2" value="n" <?=$prova_n?> /> Não    
-    </td>
-  </tr> 
- 
-  <?
-	include("banco/conecta.php");
-        $agendamentos = mysql_query("select descricao from tb_prova_agenda where id_prova_agenda='$id_prova_agenda';");
-        $dados4=mysql_fetch_array($agendamentos);
-            $descricao=$dados4["descricao"];  
-  ?>
-  <tr>
-       <td><div align="right"><b>Prova Agendada: </b></div></td>
-       <td><a href='index.php?menu=treinamento/provaAgendamento&id=<?=$id_prova_agenda?>&acao=altera'><?=$id_prova_agenda."-".$descricao?></a></td>      
-       <!-- <td><input type="text" name="id_prova_agenda_" class="maiusculo" value="<?=$id_prova_agenda .'-'. $descricao?>" size="40" readonly /></td> -->
-            
-  </tr>   
-  
-  
-  <tr>
-    <td><div align="right"><b>Certificado: </b></div></td>
-    <td>
-    	<input type="radio" accesskey="s" name="certificado_" tabindex="1" value="s" <?=$certificado_s?> /> Sim  
-    	&nbsp;&nbsp;&nbsp;
-    	<input type="radio" accesskey="n" name="certificado_" tabindex="2" value="n" <?=$certificado_n?> /> Não    
-    </td>
-  </tr>  
-  <tr>
-    <td><div align="right"><b>Data de Cadastro: </b></div></td>
-    <td><input type="text" name="data_cad_" class="minusculo" maxlength="40" value="<?=($data_cad==null)?"":$data_cad?>" size="20" readonly/></td>
+    <td><div align="right"><b>Login: </b></div></td>
+    <td><input type="text" name="login_" class="minusculo" value="<?=($login==null)?"":$login?>" size="15" /></td>
   </tr>
+  <?php if($id==null && $acao==null){ ?>
   <tr>
-    <td><div align="right"><b>Data Últ. Alteração: </b></div></td>
-    <td><input type="text" name="data_alt_" class="minusculo" maxlength="40" value="<?=($data_alt==null)?"":$data_alt?>" size="20" readonly/></td>
+    <td><div align="right"><b>Senha: </b></div></td>
+    <td><input type="text" name="senha_" value="<?=($senha==null)?"":$senha?>" size="15" /></td>
   </tr>
-  <? } ?>
+  <? } ?> 
 
-  <? if($_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
+
+  <?php if($id == null && $_SESSION["s_permissao"]>=5 ){ ?>
   <tr>
-    <td valign="top"><div align="right" vertical-align="top"><b>Observação: </b></div></td>
-    <td>
-    	 <textarea cols="44" rows="5" class="campo" name="observacao_" style="overflow:inherit; border:1px solid #c3c3c3;"><?=($observacao==null)?"":$observacao?></textarea>
-    </td>
-  </tr> 
+      <td><div align="right"><b>Permissão: </b></div></td>
+      <td>
+          <select name="permissao_" id="permissao_">
+          <option value="1" <?=($permissao==1)?"selected='selected'":""?> >UAB</option>
+          <option value="2" <?=($permissao==2)?"selected='selected'":""?> >Acadêmico</option>
+          <option value="3" <?=($permissao==3)?"selected='selected'":""?> >Tutor</option>
+          <option value="5" <?=($permissao==5)?"selected='selected'":""?> >Secretária</option>
+          <option value="7" <?=($permissao==7)?"selected='selected'":""?> >Coordenadora</option>
+          <option value="9" <?=($permissao==9)?"selected='selected'":""?> >T.I.</option>
+        </select>
+      </td>
+  </tr>   
   <? } ?>
   
+  
+  <?php if($id == null && $_SESSION["s_permissao"]>=3 ){ ?>
   <tr>
-    <td><div align="right"></div></td>
-    <td>
-         <span class="legenda-form">* Campo obrigratório.</span>
-         <br><span class="legenda-form">IES: Instituição de Ensino Superior.</span>
-    </td>
+      <td><div align="right"><b>Situação: </b></div></td>
+      <td>
+          <input type="radio" accesskey="a" name="situacao_" tabindex="1" value="a" <?=$sit_a?> checked="checked" />Ativo  
+          &nbsp;&nbsp;&nbsp;
+          <input type="radio" accesskey="i" name="situacao_" tabindex="2" value="i" <?=$sit_i?> />Inativo     
+      </td>
   </tr>  
+  <? } ?> 
+
   
   <tr>
     <td colspan="2"><div align="center" >
       <br>
-      <? if($id==null) { ?>
+      <?php if($id==null) { ?>
         <input type="submit" name="insere" value="Salvar" onclick="Acao('index.php?menu=cadastro/pessoa&id=<?=$idPessoa?>&acao=insere')"/>
       <? } ?> 
-      <? if(($_SESSION["s_idPessoa"]==$id) || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
-        <? if($id != null) { ?>
+      
+      <?php if(($_SESSION["s_idPessoa"]==$id) || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
+        <?php if($id != null) { ?>
             <input type="submit" name="altera" value="Alterar Dados" onclick="Acao('index.php?menu=cadastro/pessoa&id=<?=$id_pessoa?>&acao=altera')"/>
             <? if($_SESSION["s_idPessoa"]==$id){ ?>
                 <input type="submit" name="alteraSenha" value="Alterar Senha" onclick="Acao('index.php?menu=usuario/usu_altera_senha1')"/>
@@ -318,7 +230,7 @@ if($id==null && $acao==null){
 <? // ============ CONSULTA =============== ?>
 
 
-<? if($_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
+<?php if($_SESSION["s_permissao"]==3 || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==7 || $_SESSION["s_permissao"]==9 ){ ?>
 <br><br>
 <FORM id="form" method="POST" action="index.php?menu=cadastro/pessoa&acao=pesquisa"> 
 <table width="100" border="0" cellspacing="4" cellpadding="0">
@@ -336,7 +248,7 @@ if($id==null && $acao==null){
 
 
 
-<?
+<?php
 
 	// ABRE CONEXAO COM BANCO
 	include("banco/conecta.php");
@@ -345,15 +257,15 @@ if($id==null && $acao==null){
         
         //REALIZA UM SELECT NA TABELA
         if($acao == "ativo") {
-            $pessoas=mysql_query("select P.*, A.situacao, A.id_pessoa from tb_pessoa P, tb_autenticacao A where P.id_pessoa=A.id_pessoa and A.situacao='a' order by P.nome asc");
+            $pessoas=mysql_query("select * from tb_pessoa where situacao='a' AND nome LIKE '%$pNome%' order by nome asc;");
 	} 
         
         if($acao == "inativo") {
-            $pessoas=mysql_query("select P.*, A.situacao, A.id_pessoa from tb_pessoa P, tb_autenticacao A where P.id_pessoa=A.id_pessoa and A.situacao='i' order by P.nome asc");
+            $pessoas=mysql_query("select * from tb_pessoa where situacao='i' AND nome LIKE '%$pNome%' order by nome asc;");
 	} 
         
         if($acao == "pesquisa"){
-            $pessoas=mysql_query("select P.*, A.situacao, A.id_pessoa from tb_pessoa P, tb_autenticacao A where (P.id_pessoa=A.id_pessoa and A.situacao='a' AND nome LIKE '%$pNome%') order by P.nome asc;");
+            $pessoas=mysql_query("select * from tb_pessoa where situacao='a' AND nome LIKE '%$pNome%' order by nome asc;");
         }
         
 	//DESCOBRE A QTD DE LINHAS DE DADOS
@@ -366,11 +278,9 @@ if($id==null && $acao==null){
 <table border="0" class="tabela">
 <thead stile="font-weight:bold; text-align: center;">
 <tr>
-          <td class="titulo_meio" align="center">Foto</td>	  
           <td class="titulo_meio" align="center">Nome</td>	  
-          <td class="titulo_meio" align="center">Apelido</td>
   	  <td class="titulo_meio" align="center">Sexo</td>
-  	  <td class="titulo_meio" align="center">Propriedade</td>
+  	  <td class="titulo_meio" align="center">Permissão</td>
   	  <td class="titulo_meio" align="center">Cidade</td>
   	  <td class="titulo_meio" align="center">Telefone</td> 
           <td class="titulo_dir" align="center">E-mail</td> 
@@ -384,22 +294,32 @@ if($id==null && $acao==null){
     //POVOAR A TABELA COMO DADOS VINDOS DO BANCO
     $id_pessoa=$dados["id_pessoa"];
     $nome=$dados["nome"];
-    $apelido=$dados["apelido"];
-    $propriedade=$dados["propriedade"];
-    $foto=$dados["foto"];
-    $cidade=$dados["cidade"];
-    $fone_cel=$dados["fone_cel"];
-    $email=$dados["email"]; 
     $sexo=$dados["sexo"];
+    $permissao=$dados["permissao"];
+    $cidade=$dados["cidade"];
+    $fone=$dados["fone"];
+    $email=$dados["email"]; 
+    
+    if($permissao==1)
+        $perm="UAB";
+    elseif($permissao==2)
+        $perm="Acadêmico";
+    elseif($permissao==3)
+        $perm="Tutor";
+    elseif($permissao==5)
+        $perm="Secretária";
+    elseif($permissao==7)
+        $perm="Coordenadora";
+    elseif($permissao==9)
+        $perm="T.I.";
+    
 echo "
 	<tr $corFundo>
-		<td class='conteudo_c'>&nbsp;<img src='$foto' width='30' border='1'>&nbsp;</td>
                 <td><a href='index.php?menu=cadastro/pessoa&id=$id_pessoa'>$nome &nbsp;</a></td>
-                <td>$apelido &nbsp;</td>
                 <td class='conteudo_c'>$sexo</td>
-                <td>$propriedade &nbsp;</td>
+                <td>$perm &nbsp;</td>
                 <td>$cidade &nbsp;</td>
-                <td>$fone_cel &nbsp;</td>
+                <td>$fone &nbsp;</td>
 		<td>$email &nbsp;</td>
 	</tr>
 	";
@@ -428,13 +348,13 @@ echo "
     //<![CDATA[
 
     var r = new Restrict("form1");  
-    
-    r.field.fone_cel_ = "\\d-() ";
-    r.mask.fone_cel_ = "(##) #####-####";  
 
     r.field.data_nasc_ = "\\d/";
     r.mask.data_nasc_ = "##/##/####";
-
+    
+    r.field.fone_ = "\\d-() ";
+    r.mask.fone_ = "(##) #####-####"; 
+    
     r.onKeyRefuse = function(o, k){
     o.style.backgroundColor = "#F0B7A4";
     }
@@ -459,7 +379,7 @@ echo "
     //]]>
 </script>
 
-<?
+<?php
 	// fecha o ELSEIF ELSE
 	} else {
                 // SEGURANï¿½A - PEGA URL

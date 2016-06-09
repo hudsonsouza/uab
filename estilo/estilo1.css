@@ -16,7 +16,7 @@ body {
 #cabecalho {
     height: 200px;
     /* background:  #ffffff url(../img_int/siepi-cabecalho-transp.png) left no-repeat scroll; */
-    background:  #ffffff url(../img_int/uab-cabecalho.png) center no-repeat scroll;
+    background:  #ffffff url(../img_int/uab-cabecalhoA.png) center no-repeat scroll;
     text-align: center;
     clear: both;  /*nao flutuar*/
     /* #332913 novo:4A3815 */
@@ -152,7 +152,7 @@ ul.menu ul
    margin: 0;
    padding: 0;
    border-bottom: 1px solid #ccc;
-   width: 200px; /* 'sub-menu' comprimento dos itens */
+   width: 120px; /* 'sub-menu' comprimento dos itens */
    background-color: #FFFFFF; /* IE6 Bug */
 }
 
