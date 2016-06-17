@@ -1,5 +1,6 @@
 <?php
     $id=$_GET["id"];
+    $acao=$_GET["acao"];
     $campoFoco = 'data_';
     session_start();
     if (!isset($_SESSION['s_login'])) {
@@ -13,132 +14,155 @@
 
 <center>
 
+
+    
+    
+    
+    
+<? // ============ BOTAO NOVA NOTICIA =============== ?>
+
+<FORM id="form" method="POST" action="index.php?menu=noticia/noticia_form&barra=barraFormatacao"> 
+<table width="100" border="0" cellspacing="4" cellpadding="0">
+  <tr>
+    <td>
+	<input tabindex="2" type="submit" name="novaNotica" value="::: Criar Nova Notícia :::" />
+    </td>
+</table>
+</FORM>    
+
+    
+<? // ============ CONSULTA =============== ?>
+
+
+<?php if($_SESSION["s_permissao"]==3 || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==7 || $_SESSION["s_permissao"]==9 ){ ?>
+<br><br>
+<FORM id="form" method="POST" action="index.php?menu=noticia/noticia_lista&acao=pesquisa"> 
+<table width="100" border="0" cellspacing="4" cellpadding="0">
+  <tr>
+    <td align="right">Nome: </td>
+    <td>
+		<input tabindex="1" type="text" name="pNome" size="20" class="maiusculo" />	</td>
+    <td rowspan="2"> 
+                <input tabindex="2" type="submit" name="pesquisar" value=" Pesquisar " />
+    </td>
+  </tr>
+
+</table>
+</FORM>
+
+
+
 <?php
-$id=$_GET["id"];
-$acao=$_GET["acao"];
-include("noticia/noticiaRecuperaDB.php");
 
+	// ABRE CONEXAO COM BANCO
+	include("banco/conecta.php");
+	$pNome=trim(strtoupper($_POST["pNome"])); 
+        echo "<br>Pesquisa......: <b>" . $pNome . "</b>";
+        
+        //REALIZA UM SELECT NA TABELA
+        if($acao == "ativo") {
+            $pessoas=mysql_query("select * from tb_noticia where situacao='a' AND autor LIKE '%$pNome%' AND texto LIKE '%$pNome%' order by data, titulo asc;");
+	} 
+        
+        if($acao == "inativo") {
+            $pessoas=mysql_query("select * from tb_noticia where situacao='i' AND autor LIKE '%$pNome%' AND texto LIKE '%$pNome%' order by data, titulo asc;");
+	} 
+        
+        if($acao == "pesquisa"){
+            $pessoas=mysql_query("select * from tb_noticia where situacao='a' AND autor LIKE '%$pNome%' order by data, titulo asc;");
+        }
+        
+	//DESCOBRE A QTD DE LINHAS DE DADOS
+        if( $pessoas )
+	$ndados=mysql_num_rows($pessoas);
+  	echo "<br><br>Ha <b>$ndados</b> cadastros armazenados ";
+  	if($acao=="inativo"){echo" INATIVOS";}
+        echo "<br><br>";
 ?>
-
-    
-<?php // ========= ACOES =============     
-    
-if($id==null && $acao==null){
-    echo "NOVA NOTÍCIA<br><br>";
-    
-} else if ($id==null && $acao=="insere"){    
-    $novoCadastro=TRUE;
-    include("noticia/noticiaRecuperaForm.php");
-    
-    //if(!empty($data) && !empty($autor) && !empty($titulo) && !empty($texto) && !empty($destaque) && !empty($situacao) ){
-    if(!empty($data) && !empty($autor) && !empty($titulo) ){
-        //include("noticia/noticiaRecuperaForm.php");
-        include("banco/conecta.php");
-        mysql_query("INSERT INTO tb_noticia (id_noticia, data, autor, titulo, texto, destaque, situacao ) VALUES ( NULL, '$data', '$autor', '$titulo', '$texto', '$destaque', 'a' )");
-        mysql_query("commit");
-        mysql_close();
-        $novoCadastro=FALSE;
-        echo "<div class=msg><br>.:: Notícia cadastrada com Sucesso ! ::.<br><br></div>";
-        echo "<meta HTTP-EQUIV='refresh' CONTENT='2; URL=index.php?menu=noticia/noticia&barra=barraFormatacao'>";  
-                    
+<table border="0" class="tabela">
+<thead stile="font-weight:bold; text-align: center;">
+<tr>
+          <td class="titulo_meio" align="center">Data</td>	  
+          <td class="titulo_meio" align="center">Autor</td>	  
+          <td class="titulo_meio" align="center">Título</td>
+          <td class="titulo_meio" align="center">Destaque</td>	  
+          <td class="titulo_meio" align="center">Situação</td>	
+</tr>
+</thead>
+<tbody align="left">
+<?php
+    for ($i=0;$i<$ndados;$i++){
+        
+    // VARIACAO DA COR DO FUNDO DA LINHA DA TABELA
+    if($i%2 == 0){ 
+       $fundo='conteudo_branco';
+       $fundo_c='conteudo_branco_c';
     } else {
-        // MSG DE CAMPOS OBRIGATORIOS
-        echo "<div class=msgERRO><br>.:: Preencha todos os campos, obrigatóriamente! ::.<br><br></div>";                        
-    }    
-    
-    
-    
-    
-    
-    
-    
-} ?>    
-    
-    
-<?php // ========= FORMULARIO ============= 
+       $fundo='conteudo_cinza';
+       $fundo_c='conteudo_cinza_c';
+    }        
+        
+        
+    //DECOBRIR O TAMANHO DO ARRAY
+    $dados=mysql_fetch_array($pessoas);
+    //POVOAR A TABELA COMO DADOS VINDOS DO BANCO
+    $id_noticia=$dados["id_noticia"];
+    $data = formataData($dados["data"], "br");
+    $autor=$dados["autor"];
+    $titulo=$dados["titulo"];
+    $destaque=$dados["destaque"];
+        if($destaque=="s")
+            $dest="Sim";
+        else
+            $dest="Não";
+    $situacao=$dados["situacao"];
+        if($situacao=="a")
+            $sit="Ativo";
+        else
+            $sit="Inativo";
+echo "
+	<tr $corFundo>
+            <td class='$fundo_c'>&nbsp;$data&nbsp;</td>
+            <td class='$fundo'>&nbsp;$autor&nbsp;</td>
+            <td class='$fundo'><a href='index.php?menu=noticia/noticia_form&barra=barraFormatacao&id=$id_noticia'>&nbsp;$titulo &nbsp;</a></td>
+            <td class='$fundo_c'>&nbsp;$dest&nbsp;</td>
+            <td class='$fundo_c'>&nbsp;$sit&nbsp;</td>
+        </tr>
+	";
+	}
+?>
+</tbody>
+</table>    
+
+<? } ?>
+
+<br>
 
 
-if($novoCadastro==TRUE){
-    include_once 'cadastro/pessoaRecuperaForm.php';
-    $data = formataData(converteData(trim(strtolower($_POST["data_"]))),"br");
-} 
+<? // ================= CONDIÇÕES ======================= ?>
 
-?>    
-   
-<FORM id="form1" METHOD="POST" ACTION="./">
-<table width="930" border="0" cellspacing="5" class="corpoTab">
-    <?php if($id != NULL){ ?>
-    <tr>
-        <td width="200"><div align="right"><b>Código: </b></div></td>
-        <td width="730"><input type="text" name="id_noticia_" id="id_noticia_" class="minusculo" value="<?=($id_noticia==null)?"":$id_noticia?>" size="5" readonly /></td>
-    </tr>  
-    <?php } ?>
-    <tr>
-      <td><div align="right"><b>Data: </b></div></td>
-      <td><input type="text" name="data_" id="data_" class="minusculo" maxlength="10" value="<?=($data==null)?"":$data?>" size="15"/> <span class="legenda-form">dd/mm/aaaa</span></td>
-    </tr>    
-    <tr>
-      <td><div align="right"><b>Autor: </b></div></td>
-      <td>
-          <input type="text" name="autor_" class="maiusculo" value="<?=($autor==null)?"":$autor?>" size="70" /></td>
-    </tr>     
-    <tr>
-      <td><div align="right"><b>Título: </b></div></td>
-      <td>
-          <input type="text" name="titulo_" class="maiusculo" value="<?=($titulo==null)?"":$titulo?>" size="130" /></td>
-    </tr>     
 
-    <tr>
-      <td valign="top" align="right"><b>Texto:</b></td>
-      <td>    
-          <textarea cols="100" rows="15" class="campo" name="texto_" style="overflow:inherit; border:1px solid #c3c3c3;"><?=($texto==null)?"":$texto?></textarea>
-      </td>
-    </tr>                     
+<br><br>
+	<a href="index.php?menu=home">| Voltar |</a>
+	<br>
+        <a href="index.php?menu=noticia/noticia_form&barra=barraFormatacao">| Nova Notícia |</a>
+</center>	
 
-    <tr>
-      <td><div align="right"><b>Destaque: </b></div></td>
-      <td>
-          <input type="radio" accesskey="s" name="destaque_" tabindex="1" value="s" <?=$dest_s?> checked="checked" /> Sim  
-          &nbsp;&nbsp;&nbsp;
-          <input type="radio" accesskey="n" name="destaque_" tabindex="2" value="n" <?=$dest_n?> /> Não    
-      </td>
-    </tr> 
-    <tr>
-      <td><div align="right"><b>Situação: </b></div></td>
-      <td>
-          <input type="radio" accesskey="a" name="situacao_" tabindex="1" value="a" <?=$sit_a?> checked="checked" /> Ativo  
-          &nbsp;&nbsp;&nbsp;
-          <input type="radio" accesskey="i" name="situacao_" tabindex="2" value="i" <?=$sit_i?> /> Inativo    
-      </td>
-    </tr>     
-    
-    
-    <tr>
-       <td colspan="2"><div align="center" >
-         <br>
-         <?php if($id==NULL){ ?>
-           <input type="submit" name="insere" value=" Salvar " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao&id=<?=$id_noticia?>&acao=insere')"/>&nbsp;
-         <?php } else {  ?>   
-           <input type="submit" name="altera" value=" Alterar " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao&id=<?=$id_pessoa?>&acao=altera')"/>&nbsp;
-           <input type="submit" name="exclui" value=" Excluir " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao&id=<?=$id_pessoa?>&acao=exclui')"/>&nbsp;
-         <?php } ?> 
-         <input type="submit" name="limpa"  value=" Limpar " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao')"/>
-       </td>    
-    </tr>    
+<br><br>
 
-    </table>
-</FORM>      
-    
-    
-    
+<!-- === MASCARA PARA OS CAMPOS DOS FORMULARIOS === -->
+
 <script type="text/javascript">
     //<![CDATA[
 
     var r = new Restrict("form1");  
+
+    r.field.data_nasc_ = "\\d/";
+    r.mask.data_nasc_ = "##/##/####";
     
-    r.field.data_ = "\\d/";
-    r.mask.data_ = "##/##/####";    
-        
+    r.field.fone_ = "\\d-() ";
+    r.mask.fone_ = "(##) #####-####"; 
+    
     r.onKeyRefuse = function(o, k){
     o.style.backgroundColor = "#F0B7A4";
     }
@@ -157,32 +181,11 @@ if($novoCadastro==TRUE){
     }  
     
     function campoFoco() {
-      document.getElementById("data_").focus(); 
+      document.getElementById("nome_").focus(); 
     }    
 
     //]]>
 </script>
-
-
-<?  if($barra == "barraFormatacao") { ?>
-            <script type="text/javascript" src="biblioteca/tinymce/js/tinymce/tinymce.min.js"></script>
-            <script type="text/javascript">
-            tinymce.init({
-                selector: "textarea",
-                language : 'pt_BR',
-                theme: "modern",
-                formats : {
-                    hudson : {selector : 'h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
-                },
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons"
-             });
-            </script>
-        <!-- 
-        <script type="text/javascript" src="js/tinymce/jscripts/tiny_mce/tiny_mce_src.js"></script> 
-        <? //include("js/tinymce_barra_formatacao.js"); ?>
-        -->
-<?  } ?>
-
 
 <?php
 	// fecha o ELSEIF ELSE

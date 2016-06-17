@@ -9,6 +9,7 @@
         $data = formataData($dados["data"], "br");
         $autor=$dados["autor"];
         $titulo=$dados["titulo"];
+        $texto=$dados["texto"];
         $destaque=$dados["destaque"];
             $dest_s='';
             $dest_n='';
