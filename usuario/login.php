@@ -28,7 +28,7 @@
 </FORM>
 
 <br><br>
-	<a href="index.php?menu=usuario/usu_esqueci_senha1">| Esqueci a Senha |</a>
+	<a href="index.php?menu=usuario/esqueciSenha">| Esqueci a Senha |</a>
 </center>
 
 <br><br>

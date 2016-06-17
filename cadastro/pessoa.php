@@ -15,7 +15,6 @@
 <?php 
 
 $acao=$_GET["acao"];
-$preenchimento=FALSE;
 
 
 if($id != null){
@@ -25,10 +24,12 @@ if($id != null){
 
 if($id==null && $acao==null){
 	echo "NOVO CADASTRO<br><br>";
+        
 
         
 } else if ($id==null && $acao=="insere"){
 	include("cadastro/pessoaRecuperaForm.php");
+        $preenchimento=TRUE;
         
         if( !empty($email) ){  // CAMPO EMAIL NAO VAZIO        
 
@@ -44,14 +45,13 @@ if($id==null && $acao==null){
             if($verificaEmail==TRUE){
             
                     if(!empty($nome) && !empty($sexo) && !empty($data_nasc) && !empty($fone) && !empty($email) && !empty($cidade) && !empty($login) && !empty($senha)){  // CAMPO EMAIL NAO VAZIO        
-echo "<br>AKI...";
                             $senhaMD5 = MD5($senha);
                             mysql_query("INSERT INTO tb_pessoa (id_pessoa , nome , sexo , data_nasc , fone , email , cidade , login , senha , permissao , situacao ) VALUES (null, '$nome', '$sexo', '$data_nasc', '$fone', '$email', '$cidade', '$login', '$senhaMD5', 1, 'a' )");
                             mysql_query("commit");
                             mysql_close();
                             echo "<div class=msg><br>.:: Cadastro inserido sucesso ! ::.<br><br></div>";
                             echo "<meta HTTP-EQUIV='refresh' CONTENT='10; URL=index.php?menu=cadastro/pessoa'>";	
-                            $preenchimento=TRUE;
+                            $preenchimento=FALSE;
 
                     } else {
                         // EMAIL JA EXISTENTE
@@ -72,7 +72,7 @@ echo "<br>AKI...";
                  
 } else if ($id != null && $acao=="altera"){
 	// echo "CADASTRO ALTERAR";
-        include("cadastro/pessoaRecuperaFormulario.php"); 
+        include("cadastro/pessoaRecuperaForm.php"); 
         include("banco/conecta.php");
 	mysql_query("update tb_pessoa set nome='$nome', sexo='$sexo', data_nasc='$data_nasc', fone='$fone', email='$email', cidade='$cidade', permissao='$permissao', situacao='$situacao' where tb_pessoa.id_pessoa='$id_pessoa' limit 1") or die(mysql_error());
 	mysql_query("commit");
@@ -99,8 +99,9 @@ echo "<br>AKI...";
 
     
 <?php // ============= FORMULARIO ====================
-if($acao!=null && $preenchimento==FALSE){
+if($preenchimento==TRUE){
     include("cadastro/pessoaRecuperaForm.php");
+    $data_nasc = formataData(converteData(trim(strtolower($_POST["data_nasc_"]))),"br");
 }
 ?>    
     
@@ -127,7 +128,7 @@ if($acao!=null && $preenchimento==FALSE){
     	<input type="radio" accesskey="f" name="sexo_" tabindex="2" value="f" <?=$sex_f?> /> Feminino    
     </td>
   </tr> 
-  <td><div align="right"><b>Data de Nascimento: </b></div></td>
+  <td><div align="right"><b>Data de Nasc: </b></div></td>
     <td><input type="text" name="data_nasc_" class="minusculo" maxlength="40" value="<?=($data_nasc==null)?"":$data_nasc?>" size="15"/></td>
   </tr>
   <tr>
@@ -145,7 +146,7 @@ if($acao!=null && $preenchimento==FALSE){
   </tr>
   <tr>
     <td><div align="right"><b>Login: </b></div></td>
-    <td><input type="text" name="login_" class="minusculo" value="<?=($login==null)?"":$login?>" size="15" /></td>
+    <td><input type="text" name="login_" class="minusculo" value="<?=($login==null)?"":$login?>" size="15" <?=($id_pessoa==null)?"":"readonly"?>  /></td>
   </tr>
   <?php if($id==null && $acao==null){ ?>
   <tr>
@@ -155,7 +156,7 @@ if($acao!=null && $preenchimento==FALSE){
   <? } ?> 
 
 
-  <?php if($id == null && $_SESSION["s_permissao"]>=5 ){ ?>
+  <?php if($id != null && $_SESSION["s_permissao"]>=5 ){ ?>
   <tr>
       <td><div align="right"><b>Permissão: </b></div></td>
       <td>
@@ -172,7 +173,7 @@ if($acao!=null && $preenchimento==FALSE){
   <? } ?>
   
   
-  <?php if($id == null && $_SESSION["s_permissao"]>=3 ){ ?>
+  <?php if($id != null && $_SESSION["s_permissao"]>=3 ){ ?>
   <tr>
       <td><div align="right"><b>Situação: </b></div></td>
       <td>
@@ -190,38 +191,29 @@ if($acao!=null && $preenchimento==FALSE){
       <?php if($id==null) { ?>
         <input type="submit" name="insere" value="Salvar" onclick="Acao('index.php?menu=cadastro/pessoa&id=<?=$idPessoa?>&acao=insere')"/>
       <? } ?> 
+        
       
-      <?php if(($_SESSION["s_idPessoa"]==$id) || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
+      <?php if(($_SESSION["s_idPessoa"]==$id) || $_SESSION["s_permissao"]==3 || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==7 || $_SESSION["s_permissao"]==9){ ?>
         <?php if($id != null) { ?>
             <input type="submit" name="altera" value="Alterar Dados" onclick="Acao('index.php?menu=cadastro/pessoa&id=<?=$id_pessoa?>&acao=altera')"/>
-            <? if($_SESSION["s_idPessoa"]==$id){ ?>
-                <input type="submit" name="alteraSenha" value="Alterar Senha" onclick="Acao('index.php?menu=usuario/usu_altera_senha1')"/>
+            <? if($_SESSION["s_idPessoa"]==$id || $_SESSION["s_permissao"]==9 ){ ?>
+                <input type="submit" name="alteraSenha" value="Alterar Senha" onclick="Acao('index.php?menu=usuario/alteraSenha&id=<?=$id_pessoa?>')"/>
             <? } ?>
-            <? if($_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
-                <input type="submit" name="relatorio" value="Relatório" onclick="Acao('index.php?menu=treinamento/relatIndividual&id=<?=$id_pessoa?>')"/>
-                <input type="submit" name="export_relatorio" value="Export.Relatório" onclick="Acao('index.php?menu=treinamento/relatExportacaoIndividual&id=<?=$id_pessoa?>')"/>
-                <input type="submit" name="bloquear" value="Bloquear" onclick="Acao('index.php?menu=cadastro/pessoa&idex=<?=$id_pessoa?>&acao=bloqueia')"/>
-                <input type="submit" name="reenvio" value="Reenviar Senha" onclick="Acao('index.php?menu=cadastro/pessoaReenviaSenha&id=<?=$id_pessoa?>')"/>
-            <? } ?>
-            <? if($_SESSION["s_idPessoa"]==$id || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10){ ?>
-                <input type="submit" name="foto" value="Foto" onclick="Acao('index.php?menu=cadastro/pessoaFoto&id_p=<?=$id_pessoa?>&acao=alteraFoto')"/>
-            <? } ?>
-                
+               
                 
         <? } ?>
-      <? if($acao == "inativo" && ($_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10)){ ?>          
+      <? if($acao == "inativo" && ($_SESSION["s_permissao"]==3 || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==7 || $_SESSION["s_permissao"]==9)){ ?>          
             <input type="submit" name="ativo" value="Ativo" onclick="Acao('index.php?menu=cadastro/pessoa&id=<?=$id_pessoa?>&acao=ativo')"/>
       <? } ?>
-      <? if($acao != "inativo" && ($_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==10)){ ?>          
-            <input type="submit" name="temporario" value="Temporário" onclick="Acao('index.php?menu=cadastro/pessoaTemporario')"/>
-            <input type="submit" name="inativo" value="Inativo" onclick="Acao('index.php?menu=cadastro/pessoaInativo')"/>
-      <? } ?>
-      <? if($_SESSION["s_permissao"]==10){ ?>          
-            <!-- <input type="submit" name="avancado" value="Avançado" onclick="Acao('index.php?menu=cadastro/pessoaAutenticacao&id=<?=$id_pessoa?>')"/> -->
+      <? if($acao != "inativo" && ($_SESSION["s_permissao"]==3 || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==7 || $_SESSION["s_permissao"]==9)){ ?>          
+            <input type="submit" name="inativo" value="Inativo" onclick="Acao('index.php?menu=cadastro/pessoa&acao=inativo')"/>
       <? } ?>
             
       <? } ?>
+            
+            
       <input type="submit" name="limpa"  value="Limpar" onclick="Acao('index.php?menu=cadastro/pessoa')"/>
+    
     </div></td>
     </tr>
 </table>
@@ -279,7 +271,7 @@ if($acao!=null && $preenchimento==FALSE){
 <thead stile="font-weight:bold; text-align: center;">
 <tr>
           <td class="titulo_meio" align="center">Nome</td>	  
-  	  <td class="titulo_meio" align="center">Sexo</td>
+  	  <td class="titulo_meio" align="center">&nbsp; Sexo &nbsp;</td>
   	  <td class="titulo_meio" align="center">Permissão</td>
   	  <td class="titulo_meio" align="center">Cidade</td>
   	  <td class="titulo_meio" align="center">Telefone</td> 
@@ -289,38 +281,52 @@ if($acao!=null && $preenchimento==FALSE){
 <tbody align="left">
 <?php
     for ($i=0;$i<$ndados;$i++){
+        
+    // VARIACAO DA COR DO FUNDO DA LINHA DA TABELA
+    if($i%2 == 0){ 
+       $fundo='conteudo_branco';
+       $fundo_c='conteudo_branco_c';
+    } else {
+       $fundo='conteudo_cinza';
+       $fundo_c='conteudo_cinza_c';
+    }        
+        
+        
     //DECOBRIR O TAMANHO DO ARRAY
     $dados=mysql_fetch_array($pessoas);
     //POVOAR A TABELA COMO DADOS VINDOS DO BANCO
     $id_pessoa=$dados["id_pessoa"];
     $nome=$dados["nome"];
     $sexo=$dados["sexo"];
-    $permissao=$dados["permissao"];
+        if($sexo=="m")
+            $sex="Masc";
+        else
+            $sex="Fem";
     $cidade=$dados["cidade"];
     $fone=$dados["fone"];
     $email=$dados["email"]; 
-    
-    if($permissao==1)
-        $perm="UAB";
-    elseif($permissao==2)
-        $perm="Acadêmico";
-    elseif($permissao==3)
-        $perm="Tutor";
-    elseif($permissao==5)
-        $perm="Secretária";
-    elseif($permissao==7)
-        $perm="Coordenadora";
-    elseif($permissao==9)
-        $perm="T.I.";
+    $permissao=$dados["permissao"];
+        if($permissao==1)
+            $perm="UAB";
+        elseif($permissao==2)
+            $perm="Acadêmico";
+        elseif($permissao==3)
+            $perm="Tutor";
+        elseif($permissao==5)
+            $perm="Secretária";
+        elseif($permissao==7)
+            $perm="Coordenadora";
+        elseif($permissao==9)
+            $perm="T.I.";
     
 echo "
 	<tr $corFundo>
-                <td><a href='index.php?menu=cadastro/pessoa&id=$id_pessoa'>$nome &nbsp;</a></td>
-                <td class='conteudo_c'>$sexo</td>
-                <td>$perm &nbsp;</td>
-                <td>$cidade &nbsp;</td>
-                <td>$fone &nbsp;</td>
-		<td>$email &nbsp;</td>
+                <td class='$fundo'><a href='index.php?menu=cadastro/pessoa&id=$id_pessoa'>$nome &nbsp;</a></td>
+                <td class='$fundo_c'>$sex</td>
+                <td class='$fundo'>$perm &nbsp;</td>
+                <td class='$fundo'>$cidade &nbsp;</td>
+                <td class='$fundo'>$fone &nbsp;</td>
+		<td class='$fundo'>$email &nbsp;</td>
 	</tr>
 	";
 	}

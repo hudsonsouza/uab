@@ -16,8 +16,8 @@
                $sex_m='checked="checked"';
             else
                $sex_f='checked="checked"';
-            $data_nasc = formataData($dados["data_nasc_"], "br");
-            $fone=$dados["fone_"];
+            $data_nasc = formataData($dados["data_nasc"], "br");
+            $fone=$dados["fone"];
             $email=$dados["email"];
             $cidade=$dados["cidade"];
             $login=$dados["login"];

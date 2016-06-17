@@ -140,7 +140,6 @@
                 // $observacao = "T.I.";
                 //controleAcesso($id_pessoa_aut, $nome, $login2, $permissao, $fone, $email);
 		echo "<meta HTTP-EQUIV='refresh' CONTENT='0;URL=index.php?menu=home'>";
-                     
                 
         // USUARIO INATIVO        
 	} else if ($situacao=='i') {
