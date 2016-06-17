@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/uab/usuario/esqueciSenha.php</file>
-            <file>file:/var/www/uab/usuario/alteraSenha2.php</file>
-            <file>file:/var/www/uab/cadastro/pessoa.php</file>
-            <file>file:/var/www/uab/usuario/alteraSenha.php</file>
-            <file>file:/var/www/uab/cadastro/pessoaRecuperaDB.php</file>
-            <file>file:/var/www/uab/usuario/login.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

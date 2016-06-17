@@ -88,12 +88,13 @@ if($acao=="esqueciSenha"){  ?>
 
 // DADOS PESSOA
 include("banco/conecta.php");
-$pessoas=mysql_query("select id_pessoa, nome, data_nasc, email from tb_pessoa where id_pessoa='$id';");
+$pessoas=mysql_query("select id_pessoa, nome, data_nasc, email, login from tb_pessoa where id_pessoa='$id';");
 $dados=mysql_fetch_array($pessoas);
     $id_pessoa=$dados["id_pessoa"];
     $nome=$dados["nome"];
     $data_nasc = formataData($dados["data_nasc"], "br");
     $email=$dados["email"];
+    $login=$dados["login"];
 ?>
 
   <table width="400" border="0" class="corpoTab" cellspacing="5">
@@ -101,6 +102,10 @@ $dados=mysql_fetch_array($pessoas);
         <td align="right"><b>Nome...: </b></td>
         <td><?=$id_pessoa?> - <?=$nome?></td>
     </tr>
+    <tr>
+        <td width="120" align="right"><b>Login...: </b></td>
+        <td width="480"><?= $login ?></td>
+    </tr>    
     <tr>
         <td align="right"><b>Data Nasc...: </b></td>
         <td><?=$data_nasc?></td>

@@ -40,18 +40,23 @@ if ($id_pessoa != null && $acao=="confirmaSenha"){
 
 // DADOS PESSOA
 include("banco/conecta.php");
-    $pessoas = mysql_query("select id_pessoa, nome, data_nasc, email from tb_pessoa where id_pessoa='$id2';"); 
+    $pessoas = mysql_query("select id_pessoa, nome, data_nasc, email, login from tb_pessoa where id_pessoa='$id2';"); 
     $dados=mysql_fetch_array($pessoas);
         $id_pessoa1=$dados["id_pessoa"]; 
         $nome=$dados["nome"];
         $data_nasc = formataData($dados["data_nasc"], "br");
         $email=$dados["email"]; 
+        $login=$dados["login"]; 
 ?>
 
   <table width="600" border="0" class="corpoTab" cellspacing="5">
     <tr>
         <td width="120" align="right"><b>Nome...: </b></td>
         <td width="480"><?=$id_pessoa1?> - <?=$nome?></td>
+    </tr>
+    <tr>
+        <td width="120" align="right"><b>Login...: </b></td>
+        <td width="480"><?=$login?></td>
     </tr>
     <tr>
         <td align="right"><b>Data Nasc...: </b></td>
