@@ -14,7 +14,7 @@
                             };
                     ?>
                
-               <li class="menuvertical"><a href='index.php?menu=destaque' alt="Destaque" title="Destaque">Destaque</a></li> 
+               <li class="menuvertical"><a href='index.php?menu=destaque&acao=normal' alt="Destaque" title="Destaque">Destaque</a></li> 
                <li class="menuvertical"><a href='index.php?menu=localizacao' alt="Localização" title="Localização">Localização</a></li> 
                <li class="menuvertical"><a href='index.php?menu=historico' alt="Histórico" title="Histórico">Histórico</a></li> 
                <li class="menuvertical"><a href='index.php?menu=norma' alt="Normas" title="Normas">Normas</a></li> 

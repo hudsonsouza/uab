@@ -3,7 +3,7 @@
     session_start();
     if (!isset($_SESSION['s_login'])) {
 	echo "<meta HTTP-EQUIV='refresh' CONTENT='0; URL=index.php?menu=usuario/login'>";
-    } elseif(($_SESSION["s_idPessoa"]==$id) || ($_SESSION["s_permissao"]==3) || ($_SESSION["s_permissao"]==5) || ($_SESSION["s_permissao"]==7) || ($_SESSION["s_permissao"]==9) ){
+    } elseif(($_SESSION["s_idPessoa"]==$id) || ($_SESSION["s_permissao"]==1) || ($_SESSION["s_permissao"]==3) || ($_SESSION["s_permissao"]==5) || ($_SESSION["s_permissao"]==7) || ($_SESSION["s_permissao"]==9) ){
 ?>
 
 

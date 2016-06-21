@@ -303,6 +303,25 @@ ul.menu li a:hover { color: #E2144A; }
 }
 
 
+
+.noticia_titulo{  
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000055;
+	font-size: 18pt;
+	text-align: left;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.noticia_data_autor{  
+	color: #666666;
+	font-size: 10pt;
+	text-align: left;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+
+
 #corpo-barraBranca{
 	background-color: #FFFFFF;
 	padding-top: 10px;
