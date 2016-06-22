@@ -1,7 +1,7 @@
 <?php
     $id=$_GET["id"];
     $acao=$_GET["acao"];
-    $campoFoco = 'data_';
+    $campoFoco = 'pNome';
     session_start();
     if (!isset($_SESSION['s_login'])) {
 	echo "<meta HTTP-EQUIV='refresh' CONTENT='0; URL=index.php?menu=usuario/login'>";
@@ -30,20 +30,46 @@
 </table>
 </FORM>    
 
+<?php if($acao=="inativo"){ ?>
+    <FORM id="form" method="POST" action="index.php?menu=noticia/noticia_lista&acao=ativo"> 
+    <table width="65" border="0" cellspacing="4" cellpadding="0">
+      <tr>
+        <td>
+            <input tabindex="2" type="submit" name="inativo" value=" Ativo " />
+        </td>
+    </table>
+    </</FORM>     
+<?php } else {?>
+    <FORM id="form" method="POST" action="index.php?menu=noticia/noticia_lista&acao=inativo">
+    <table width="65" border="0" cellspacing="4" cellpadding="0">
+      <tr>
+        <td>
+            <input tabindex="2" type="submit" name="inativo" value=" Inativo " />
+        </td>
+    </table>
+    </FORM>   
+<?php } ?>    
     
 <? // ============ CONSULTA =============== ?>
 
 
 <?php if($_SESSION["s_permissao"]==3 || $_SESSION["s_permissao"]==5 || $_SESSION["s_permissao"]==7 || $_SESSION["s_permissao"]==9 ){ ?>
 <br><br>
-<FORM id="form" method="POST" action="index.php?menu=noticia/noticia_lista&acao=pesquisa"> 
+<?php 
+    if($acao=="inativo"){
+        $ac="inativo";
+    }else{
+        $ac="ativo";
+    }
+?>
+<FORM id="form2" method="POST" action="index.php?menu=noticia/noticia_lista&acao=<?=$ac?>"> 
 <table width="100" border="0" cellspacing="4" cellpadding="0">
   <tr>
     <td align="right">Nome: </td>
     <td>
-		<input tabindex="1" type="text" name="pNome" size="20" class="maiusculo" />	</td>
+		<input tabindex="1" type="text" name="pNome" id="pNome" size="20" class="maiusculo" />	</td>
     <td rowspan="2"> 
-                <input tabindex="2" type="submit" name="pesquisar" value=" Pesquisar " />
+                <input tabindex="2" type="submit" name="pesquisar" value=" Pesquisar : " />
     </td>
   </tr>
 
@@ -61,15 +87,15 @@
         
         //REALIZA UM SELECT NA TABELA
         if($acao == "ativo") {
-            $pessoas=mysql_query("select * from tb_noticia where situacao='a' AND autor LIKE '%$pNome%' AND texto LIKE '%$pNome%' order by data, titulo asc;");
+            $pessoas=mysql_query("select * from tb_noticia where situacao='a' AND autor LIKE '%$pNome%' OR situacao='a' AND titulo LIKE '%$pNome%' order by data desc, titulo asc;");
 	} 
         
         if($acao == "inativo") {
-            $pessoas=mysql_query("select * from tb_noticia where situacao='i' AND autor LIKE '%$pNome%' AND texto LIKE '%$pNome%' order by data, titulo asc;");
+            $pessoas=mysql_query("select * from tb_noticia where situacao='i' AND autor LIKE '%$pNome%' OR situacao='i' AND titulo LIKE '%$pNome%' order by data desc, titulo asc;");
 	} 
         
         if($acao == "pesquisa"){
-            $pessoas=mysql_query("select * from tb_noticia where situacao='a' AND autor LIKE '%$pNome%' order by data, titulo asc;");
+            $pessoas=mysql_query("select * from tb_noticia where situacao='a' AND autor LIKE '%$pNome%' OR situacao='a' AND titulo LIKE '%$pNome%' order by data desc, titulo asc;");
         }
         
 	//DESCOBRE A QTD DE LINHAS DE DADOS
@@ -144,8 +170,6 @@ echo "
 
 <br><br>
 	<a href="index.php?menu=home">| Voltar |</a>
-	<br>
-        <a href="index.php?menu=noticia/noticia_form&barra=barraFormatacao">| Nova Notícia |</a>
 </center>	
 
 <br><br>
@@ -181,7 +205,7 @@ echo "
     }  
     
     function campoFoco() {
-      document.getElementById("nome_").focus(); 
+      document.getElementById("pNome").focus(); 
     }    
 
     //]]>

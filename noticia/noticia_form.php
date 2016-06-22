@@ -52,20 +52,34 @@ if($id==null && $acao==null){
         mysql_close();
         $novoCadastro=FALSE;
         echo "<div class=msg><br>.:: Notícia cadastrada com Sucesso ! ::.<br><br></div>";
-        echo "<meta HTTP-EQUIV='refresh' CONTENT='2; URL=index.php?menu=noticia/noticia&barra=barraFormatacao'>";  
+        echo "<meta HTTP-EQUIV='refresh' CONTENT='2; URL=index.php?menu=noticia/noticia_form&barra=barraFormatacao'>";  
                     
     } else {
         // MSG DE CAMPOS OBRIGATORIOS
         echo "<div class=msgERRO><br>.:: Preencha todos os campos, obrigatóriamente! ::.<br><br></div>";                        
     }    
     
+} else if ($id!=null && $acao=="altera"){   
+    include("noticia/noticiaRecuperaForm.php"); 
+    include("banco/conecta.php");
+    mysql_query("update tb_noticia set data='$data', autor='$autor', titulo='$titulo', texto='$texto', destaque='$destaque', situacao='$situacao' where tb_noticia.id_noticia='$id_noticia' limit 1") or die(mysql_error());
+    mysql_query("commit");
+    mysql_close();
+    echo "<div class=msg><br>.:: Notícia alterada com sucesso ! ::.<br><br></div>";
+    echo "<meta HTTP-EQUIV='refresh' CONTENT='2; URL=index.php?menu=noticia/noticia_lista&acao=ativo'>";	
     
     
+} else if ($id!=null && $acao=="exclui"){  
+    include("banco/conecta.php");
+    mysql_query("update tb_noticia set situacao='i' where tb_noticia.id_noticia='$id_noticia' limit 1;");
+    mysql_query("commit");
+    mysql_close();
+    echo "<div class=msg><br>.:: Notícia excluida com sucesso ! ::.<br><br></div>";
+    echo "<meta HTTP-EQUIV='refresh' CONTENT='2; URL=index.php?menu=noticia/noticia_lista&acao=ativo'>";
     
-    
-    
-    
-} ?>    
+}
+
+?>    
     
     
 <?php // ========= FORMULARIO ============= 
@@ -130,12 +144,12 @@ if($novoCadastro==TRUE){
        <td colspan="2"><div align="center" >
          <br>
          <?php if($id==NULL){ ?>
-           <input type="submit" name="insere" value=" Salvar " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao&id=<?=$id_noticia?>&acao=insere')"/>&nbsp;
+           <input type="submit" name="insere" value=" Salvar " onclick="Acao('index.php?menu=noticia/noticia_form&barra=barraFormatacao&id=<?=$id_noticia?>&acao=insere')"/>&nbsp;
          <?php } else {  ?>   
-           <input type="submit" name="altera" value=" Alterar " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao&id=<?=$id_pessoa?>&acao=altera')"/>&nbsp;
-           <input type="submit" name="exclui" value=" Excluir " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao&id=<?=$id_pessoa?>&acao=exclui')"/>&nbsp;
+           <input type="submit" name="altera" value=" Alterar " onclick="Acao('index.php?menu=noticia/noticia_form&barra=barraFormatacao&id=<?=$id_noticia?>&acao=altera')"/>&nbsp;
+           <input type="submit" name="exclui" value=" Excluir " onclick="Acao('index.php?menu=noticia/noticia_form&barra=barraFormatacao&id=<?=$id_noticia?>&acao=exclui')"/>&nbsp;
          <?php } ?> 
-         <input type="submit" name="limpa"  value=" Limpar " onclick="Acao('index.php?menu=noticia/noticia&barra=barraFormatacao')"/>
+         <input type="submit" name="limpa"  value=" Limpar " onclick="Acao('index.php?menu=noticia/noticia_form&barra=barraFormatacao')"/>
        </td>    
     </tr>    
 

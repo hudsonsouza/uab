@@ -13,8 +13,8 @@
       <? if( ($_SESSION['s_permissao']>=1) && ($_SESSION['s_permissao']<=9) ){  // UAB ?>   
         <li class="submenu"><a href='index.php?menu=cadastro/pessoa' alt="Pessoa" title="Pessoa">Pessoas</a></li> 
             <? if( ($_SESSION['s_permissao']>=3) && ($_SESSION['s_permissao']<=9) ){ // ACADEMICO, TUTOR, SECRETARIA, COORDENADOR, T.I. ?>
-              <li class="submenu"><a href='index.php?menu=noticia/noticia_form&barra=barraFormatacao' alt="Nova Notícias" title="Nova Notícias">Nova Notícias</a></li> 
-              <li class="submenu"><a href='index.php?menu=noticia/noticia_lista&acao=ativo' alt="Lista Notícias" title="Lista Notícias">Lista Notícias</a></li> 
+              <!-- <li class="submenu"><a href='index.php?menu=noticia/noticia_form&barra=barraFormatacao' alt="Nova Notícias" title="Nova Notícias">Nova Notícias</a></li>  -->
+              <li class="submenu"><a href='index.php?menu=noticia/noticia_lista&acao=ativo' alt="Notícias" title="Notícias">Notícias</a></li> 
             <? } ?>
       <? } ?>
       </ul>
